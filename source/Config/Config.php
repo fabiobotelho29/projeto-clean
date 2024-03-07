@@ -61,7 +61,7 @@ if (strpos($_SERVER["HTTP_HOST"], "localhost") !== false) {
     define("CONF_DB_HOST", "localhost"); // Servidor local de teste
     define("CONF_DB_USER", "root"); // Usuário local
     define("CONF_DB_PASS", ""); // Senha local
-    define("CONF_DB_NAME", "projeto-uber"); // Nome da base de dados local
+    define("CONF_DB_NAME", "projeto-clean"); // Nome da base de dados local
 } else {
     define("CONF_DB_HOST", ""); // Servidor web do banco de dados
     define("CONF_DB_USER", ""); // Usuário no Servidor
@@ -75,7 +75,7 @@ if (strpos($_SERVER["HTTP_HOST"], "localhost") !== false) {
  * ### URLs DO SISTEMA ###
  * #######################
  */
-define("URL_LOCAL", "http://localhost/projeto-uber"); // URL do site no localhost
+define("URL_LOCAL", "http://localhost/projeto-clean"); // URL do site no localhost
 define("URL_DEPLOY", ""); // URL do site online
 define("URL_TEST", ""); // URL para teste
 
@@ -121,10 +121,10 @@ define("CONF_UPLOAD_IMAGES_LOGOMARCA", CONF_UPLOAD_DIR . "/logos/");
  * ###########
  */
 /** Informações de SEO do site */
-define("SEO_SITE_NAME", "Projeto Uber"); // Nome do site
-define("SEO_SITE_SUBTITLE", "Ajudando o motorista"); // Subtítulo do site
-define("SEO_SITE_DESCRIPTION", "Sua melhor opção pra gerenciar suas finanças em apcativos"); // Descrição do site
-define("SEO_SITE_KEYWORDS", "Uber, 99taxi, Aplicativo, Motorista"); // Descrição do site
+define("SEO_SITE_NAME", "Projeto Clean"); // Nome do site
+define("SEO_SITE_SUBTITLE", "Sistema para Lavanderias"); // Subtítulo do site
+define("SEO_SITE_DESCRIPTION", "Sua melhor opção pra gerenciar seus serviços de lavagens"); // Descrição do site
+define("SEO_SITE_KEYWORDS", "Lavanderia, Lavagens, Roupas, Limpeza"); // Descrição do site
 define("SEO_SITE_VERSION", "1.0"); // Versão do sistema
 define("SEO_SITE_AUTHOR", "Fabio C. Botelho"); // Autor do Sistema
 define("SEO_SITE_DOMAIN", URL_DEPLOY); // domínio do site

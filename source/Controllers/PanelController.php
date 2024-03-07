@@ -21,7 +21,6 @@ class PanelController extends Controller
     {
         $pathToViews = __DIR__ . "/../../themes/" . VIEWS_PANEL_THEME . "/";
         parent::__construct($pathToViews);
-
     }
 
     /**
@@ -38,7 +37,7 @@ class PanelController extends Controller
     public function index(?array $data): void
     {
         $seo = $this->seo
-            ->title(SEO_SITE_NAME . " | Painel do Usuário")
+            ->title(SEO_SITE_NAME . " : : Dashboard")
             ->favicon()->render();
 
         echo $this->view->render(

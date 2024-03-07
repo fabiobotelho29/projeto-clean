@@ -85,32 +85,7 @@ export const SidebarMenu = () => {
                 <!--end:Menu sub-->
             </div>
             <!--end:Menu item-->
-
-            <!--begin:Menu item-->
-            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                <!--begin:Menu link-->
-                <span class="menu-link">
-					<span class="menu-bullet">
-						<span class="bullet bullet-dot"></span>
-					</span>
-					<span class="menu-title">Kiwify</span>
-					<span class="menu-arrow"></span>
-				</span>
-                <!--end:Menu link-->
-                <!--begin:Menu sub-->
-                <div class="menu-sub menu-sub-accordion">
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu link-->
-                        ${MenuLink(SYSTEM_URL()+'/panel/account/kiwify/affiliate-link', 'Link Afiliado')}
-                        <!--end:Menu link-->
-                    </div>
-                    <!--end:Menu item-->
-
-                </div>
-                <!--end:Menu sub-->
-            </div>
-            <!--end:Menu item-->
+           
 
         </div>
         <!--end:Menu sub-->
@@ -128,17 +103,223 @@ export const SidebarMenu = () => {
                  <span class="path2"></span>
                 </i>
 			</span>
-			<span class="menu-title">Análises</span>
+			<span class="menu-title">Módulos</span>
 			<span class="menu-arrow"></span>
 		</span>
         <!--end:Menu link-->
-        <!--begin:Menu sub-->
+       <!--begin:Menu sub-->
         <div class="menu-sub menu-sub-accordion">
-            <!--begin:Menu item-->
-            <div class="menu-item">
-                ${MenuLink(SYSTEM_URL()+'/panel/analisys/period', 'Por Período')}
+            <!--begin:Module item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <!--begin:Menu link-->
+                <span class="menu-link">
+					<span class="menu-bullet">
+						<span class="bullet bullet-dot"></span>
+					</span>
+					<span class="menu-title">Hotelaria</span>
+					<span class="menu-arrow"></span>
+				</span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/user-data', 'Seus Dados')}
+                    </div>
+                    <!--end:Menu item-->
+
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/change-password', 'Alterar Senha')}
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+
+                </div>
+                <!--end:Menu sub-->
             </div>
             <!--end:Menu item-->
+            
+            <!--begin:Module item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <!--begin:Menu link-->
+                <span class="menu-link">
+					<span class="menu-bullet">
+						<span class="bullet bullet-dot"></span>
+					</span>
+					<span class="menu-title">Residencial</span>
+					<span class="menu-arrow"></span>
+				</span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/user-data', 'Seus Dados')}
+                    </div>
+                    <!--end:Menu item-->
+
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/change-password', 'Alterar Senha')}
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--end:Menu item-->
+           
+            
+            <!--begin:Module item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <!--begin:Menu link-->
+                <span class="menu-link">
+					<span class="menu-bullet">
+						<span class="bullet bullet-dot"></span>
+					</span>
+					<span class="menu-title">Uniformes</span>
+					<span class="menu-arrow"></span>
+				</span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/user-data', 'Seus Dados')}
+                    </div>
+                    <!--end:Menu item-->
+
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/change-password', 'Alterar Senha')}
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--end:Menu item-->
+           
+
+        </div>
+        <!--end:Menu sub-->
+    </div>
+    <!--end:Menu item-->
+    
+        <!--begin:Analytics item-->
+    <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
+        <!--begin:Menu link-->
+        <span class="menu-link">
+			<span class="menu-icon">
+				<i class="ki-duotone ki-filter-tablet fs-1">
+                 <span class="path1"></span>
+                 <span class="path2"></span>
+                </i>
+			</span>
+			<span class="menu-title">Relatórios</span>
+			<span class="menu-arrow"></span>
+		</span>
+        <!--end:Menu link-->
+       <!--begin:Menu sub-->
+        <div class="menu-sub menu-sub-accordion">
+            <!--begin:Module item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <!--begin:Menu link-->
+                <span class="menu-link">
+					<span class="menu-bullet">
+						<span class="bullet bullet-dot"></span>
+					</span>
+					<span class="menu-title">Hotelaria</span>
+					<span class="menu-arrow"></span>
+				</span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/user-data', 'Seus Dados')}
+                    </div>
+                    <!--end:Menu item-->
+
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/change-password', 'Alterar Senha')}
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--end:Menu item-->
+            
+            <!--begin:Module item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <!--begin:Menu link-->
+                <span class="menu-link">
+					<span class="menu-bullet">
+						<span class="bullet bullet-dot"></span>
+					</span>
+					<span class="menu-title">Residencial</span>
+					<span class="menu-arrow"></span>
+				</span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/user-data', 'Seus Dados')}
+                    </div>
+                    <!--end:Menu item-->
+
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/change-password', 'Alterar Senha')}
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--end:Menu item-->
+           
+            
+            <!--begin:Module item-->
+            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <!--begin:Menu link-->
+                <span class="menu-link">
+					<span class="menu-bullet">
+						<span class="bullet bullet-dot"></span>
+					</span>
+					<span class="menu-title">Uniformes</span>
+					<span class="menu-arrow"></span>
+				</span>
+                <!--end:Menu link-->
+                <!--begin:Menu sub-->
+                <div class="menu-sub menu-sub-accordion">
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/user-data', 'Seus Dados')}
+                    </div>
+                    <!--end:Menu item-->
+
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/change-password', 'Alterar Senha')}
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+
+                </div>
+                <!--end:Menu sub-->
+            </div>
+            <!--end:Menu item-->
+           
+
         </div>
         <!--end:Menu sub-->
     </div>

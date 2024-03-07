@@ -1,0 +1,1 @@
+<div class="app-header-logo d-flex align-items-center flex-stack px-lg-11 mb-2 js-panel-logo" id="kt_app_header_logo"></div>

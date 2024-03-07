@@ -12,7 +12,13 @@ export const SYSTEM_URL = () => {
 }
 
 export const SITE_NAME = () => {
-    return 'Projeto Uber'
+    return 'Projeto Clean'
+}
+
+export const VIEWS_THEME = (theme) => {
+
+    const URL = SYSTEM_URL();
+    return `${URL}/themes/${theme}`
 }
 
 
