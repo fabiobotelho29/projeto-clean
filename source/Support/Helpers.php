@@ -587,6 +587,15 @@ function dump($var)
     die();
 }
 
+function stop()
+{
+    echo "<pre>";
+    var_dump(__LINE__);
+    echo "</pre>";
+
+    die();
+}
+
 /**
  * #################
  * ###   MODEL   ###

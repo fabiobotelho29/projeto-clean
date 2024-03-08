@@ -129,100 +129,6 @@
                                                         <span class="text-gray-800 d-block mb-1 fs-6">Cooperador</span>
                                                     </td>
                                                     <td>
-                                                        <a href="#" class="text-gray-800 d-block mb-1 fs-6">fabio@gmail.com</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-gray-800 d-block mb-1 fs-6">(21) 97568-7833</a>
-                                                    </td>
-                                                    <td class="border-0">
-                                                        <div class="rating">
-                                                            <div class="rating-label checked">
-                                                                <i class="ki-duotone ki-star fs-6"></i>
-                                                            </div>
-                                                            <div class="rating-label checked">
-                                                                <i class="ki-duotone ki-star fs-6"></i>
-                                                            </div>
-                                                            <div class="rating-label checked">
-                                                                <i class="ki-duotone ki-star fs-6"></i>
-                                                            </div>
-                                                            <div class="rating-label checked">
-                                                                <i class="ki-duotone ki-star fs-6"></i>
-                                                            </div>
-                                                            <div class="rating-label checked">
-                                                                <i class="ki-duotone ki-star fs-6"></i>
-                                                            </div>
-                                                        </div>
-                                                        <span class="text-gray-400 fw-semibold d-block fs-7 mt-1">Admin</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
-                                                            <i class="ki-duotone ki-black-right fs-2 text-gray-500"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="symbol symbol- symbol-40px me-3">
-                                                                <img src="<?= views_theme(VIEWS_PANEL_THEME); ?>/assets/media/avatars/300-<?= rand(1,10); ?>.jpg" class="" alt="" />
-                                                            </div>
-                                                            <div class="d-flex justify-content-start flex-column">
-                                                                <a href="../dist/account/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Brooklyn Simmons</a>
-                                                                <span class="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-gray-800 d-block mb-1 fs-6">Cooperador</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-gray-800 d-block mb-1 fs-6">fabio@gmail.com</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-gray-800 d-block mb-1 fs-6">(21) 97568-7833</a>
-                                                    </td>
-                                                    <td class="border-0">
-                                                        <div class="rating">
-                                                            <div class="rating-label checked">
-                                                                <i class="ki-duotone ki-star fs-6"></i>
-                                                            </div>
-                                                            <div class="rating-label checked">
-                                                                <i class="ki-duotone ki-star fs-6"></i>
-                                                            </div>
-                                                            <div class="rating-label checked">
-                                                                <i class="ki-duotone ki-star fs-6"></i>
-                                                            </div>
-                                                            <div class="rating-label checked">
-                                                                <i class="ki-duotone ki-star fs-6"></i>
-                                                            </div>
-                                                            <div class="rating-label checked">
-                                                                <i class="ki-duotone ki-star fs-6"></i>
-                                                            </div>
-                                                        </div>
-                                                        <span class="text-gray-400 fw-semibold d-block fs-7 mt-1">Admin</span>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
-                                                            <i class="ki-duotone ki-black-right fs-2 text-gray-500"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="symbol symbol- symbol-40px me-3">
-                                                                <img src="<?= views_theme(VIEWS_PANEL_THEME); ?>/assets/media/avatars/300-<?= rand(1,10); ?>.jpg" class="" alt="" />
-                                                            </div>
-                                                            <div class="d-flex justify-content-start flex-column">
-                                                                <a href="../dist/account/overview.html" class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Brooklyn Simmons</a>
-                                                                <span class="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-gray-800 d-block mb-1 fs-6">Cooperador</span>
-                                                    </td>
-                                                    <td>
                                                         <span class="text-gray-800 d-block mb-1 fs-6">fabiobotelho29</span>
                                                     </td>
                                                     <td>
@@ -253,7 +159,7 @@
                                                         <span class="text-gray-400 fw-semibold d-block fs-7 mt-1">Admin</span>
                                                     </td>
                                                     <td>
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
+                                                        <a href="<?= url("/panel/account/employees/employee-data/".cript_code("ABC102030")); ?>" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
                                                             <i class="ki-duotone ki-black-right fs-2 text-gray-500"></i>
                                                         </a>
                                                     </td>
@@ -336,7 +242,7 @@
     </div>
     <!--end::App-->
 
-<?php include "includes/modals/create-employee.php"; ?>
+<?php include "includes/modals/modal-create-employee.php"; ?>
 
 <?php $v->start("JS"); ?>
     <!--begin::Vendors Javascript(used for this page only)-->

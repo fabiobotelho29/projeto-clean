@@ -26,9 +26,10 @@ $route->get('/login', 'AuthController::login', 'AuthControllerLogin');
 $route->group("panel");
 $route->get('/dashboard', 'PanelController::index', 'PanelControllerIndex');
 $route->get('/account/profile/user-data', 'PanelController::ProfileUserData', 'PanelControllerProfileUserData');
-$route->get('/account/profile/change-password', 'PanelController::ProfileChangePassword', 'PanelControllerProfileChangePassworda');
-$route->get('/account/company/data', 'PanelController::CommpanyData', 'PanelControllerCompanyData');
+$route->get('/account/profile/change-password', 'PanelController::ProfileChangePassword', 'PanelControllerProfileChangePassword');
+$route->get('/account/company/data', 'PanelController::CompanyData', 'PanelControllerCompanyData');
 $route->get('/account/employees/manage', 'PanelController::EmployeesManage', 'PanelControllerEmployeesManage');
+$route->get('/account/employees/employee-data/{employee_code}', 'PanelController::EmployeeData', 'PanelControllerEmployeeData');
 
 /** ADMIN */
 $route->group("admin");

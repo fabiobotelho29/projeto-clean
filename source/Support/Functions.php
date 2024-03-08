@@ -86,3 +86,29 @@ function password_generate(): string
     $codigo = substr(md5(uniqid(rand(), true)), rand(1, 10), 16);
     return $codigo;
 }
+
+function webhook_register($product, $event, $email, $payload){
+
+// saving data into webhook
+    $Conn = \Source\Core\Connect::getInstance()->query("
+    insert into webhook (product, event, user_email, code) values (\"{$product}\", \"{$event}\", \"{$email}\", '$payload')
+    ");
+
+}
+
+/**
+ * @param $code
+ * @return string
+ */
+function cript_code($code): string
+{
+    return base64_encode(KEY_CRIPT . $code);
+}
+/**
+ * @param $code
+ * @return string
+ */
+function decript_code($code): string
+{
+    return substr(base64_decode($code), -10);
+}

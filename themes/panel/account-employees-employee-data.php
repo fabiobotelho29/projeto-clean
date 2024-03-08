@@ -79,7 +79,74 @@
                         <div id="kt_app_content" class="app-content flex-column-fluid">
                             <!--begin::Content container-->
                             <div id="kt_app_content_container" class="app-container container-fluid">
-
+                                <!--begin::Navbar-->
+                                <div class="card mb-5 mb-xl-10">
+                                    <div class="card-body pt-9 pb-0">
+                                        <!--begin::Details-->
+                                        <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+                                            <!--begin: Pic-->
+                                            <div class="me-7 mb-4">
+                                                <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                                                    <img src="<?= views_theme(VIEWS_PANEL_THEME); ?>/assets/media/avatars/300-3.jpg"
+                                                         alt="image"/>
+                                                    <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
+                                                </div>
+                                            </div>
+                                            <!--end::Pic-->
+                                            <!--begin::Info-->
+                                            <div class="flex-grow-1">
+                                                <!--begin::Title-->
+                                                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                                    <!--begin::User-->
+                                                    <div class="d-flex flex-column">
+                                                        <!--begin::Name-->
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <a href="#"
+                                                               class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">Funcionário 1</a>
+                                                        </div>
+                                                        <!--end::Name-->
+                                                        <!--begin::Info-->
+                                                        <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                                                            <a href="#"
+                                                               class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
+                                                                <i class="ki-duotone ki-profile-circle fs-4 me-1">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                </i>Coordenador</a>
+                                                        </div>
+                                                        <!--end::Info-->
+                                                    </div>
+                                                    <!--end::User-->
+                                                </div>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Info-->
+                                        </div>
+                                        <!--end::Details-->
+                                        <!--begin::Navs-->
+                                        <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
+                                            <!--begin::Nav item-->
+                                            <li class="nav-item mt-2">
+                                                <a class="nav-link text-active-primary ms-0 me-10 py-5 active"
+                                                   data-bs-toggle="tab" data-bs-target="#kt_profile_details_view"
+                                                   id="nav-home-tab"
+                                                   href="../dist/account/overview.html">Dados Pessoais</a>
+                                            </li>
+                                            <!--end::Nav item-->
+                                            <!--begin::Nav item-->
+                                            <li class="nav-item mt-2">
+                                                <a class="nav-link text-active-primary ms-0 me-10 py-5"
+                                                   data-bs-toggle="tab" data-bs-target="#kt_logs_details_view"
+                                                   id="nav-logs-tab"
+                                                   href="#">Atividades</a>
+                                            </li>
+                                            <!--end::Nav item-->
+                                        </ul>
+                                        <!--begin::Navs-->
+                                    </div>
+                                </div>
+                                <!--end::Navbar-->
                                 <!--begin::details View-->
                                 <div class="tab-content" id="nav-tabContent">
                                     <div class="card mb-5 mb-xl-10 tab-pane fade show active"
@@ -88,7 +155,140 @@
                                         <div class="card-header cursor-pointer">
                                             <!--begin::Card title-->
                                             <div class="card-title m-0">
-                                                <h3 class="fw-bold m-0">Dados da Empresa</h3>
+                                                <h3 class="fw-bold m-0">Dados Pessoais</h3>
+                                            </div>
+                                            <!--end::Card title-->
+                                        </div>
+                                        <!--begin::Card header-->
+                                        <!--begin::Card body-->
+                                        <div class="card-body p-9">
+
+                                            <!--begin::Input group-->
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-4">Nome Completo</label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-8">
+                                 <span class="fw-bold fs-8 text-gray-800 me-2">
+                                     <input class="form-control" type="text" placeholder="Digite o nome completo"
+                                            value="">
+                                 </span>
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <!--end::Input group-->
+
+                                            <!--begin::Input group-->
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-4">Login</label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-8">
+                                 <span class="fw-bold fs-8 text-gray-800 me-2">
+                                     <input class="form-control" type="text" placeholder="Login para acessar o sistema"
+                                            value="">
+                                 </span>
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <!--end::Input group-->
+
+                                                  <!--begin::Input group-->
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-4">Documento (CPF)</label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-8">
+                                 <span class="fw-bold fs-8 text-gray-800 me-2">
+                                     <input class="form-control" type="text" placeholder="Digite somente os números"
+                                            value="">
+                                 </span>
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <!--end::Input group-->
+
+                                            <!--begin::Input group-->
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-4">Data de Nascimento</label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-8">
+                                 <span class="fw-bold fs-8 text-gray-800 me-2">
+                                     <input class="form-control" type="text" placeholder="Digite somente os números"
+                                            value="">
+                                 </span>
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <!--end::Input group-->
+
+                                            <!--begin::Input group-->
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-4">Nível de Acesso</label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-8">
+                                 <span class="fw-bold fs-8 text-gray-800 me-2">
+                                     <select name="currnecy" class="form-control form-select form-select-solid form-select-lg">
+																<option style="padding: 10px" value="">Selecione um nível de acesso..</option>
+                                         <?php for ($i = 1; $i <= 10; $i++): ?>
+                                             <option style="padding: 10px" value="<?= $i; ?>">Opção <?= $i; ?></option>
+                                         <?php endfor; ?>
+
+															</select>
+                                 </span>
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <!--end::Input group-->
+
+                                            <!--begin::Input group-->
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-4">Cargo</label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-8">
+                                 <span class="fw-bold fs-8 text-gray-800 me-2">
+                                     <input class="form-control" type="text"
+                                            placeholder="Digite o cargo de seu funcionário" value="">
+                                 </span>
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <!--end::Input group-->
+
+                                            <!--begin::Input group-->
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-4 fw-semibold text-muted"></label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-8">
+                                                    <span class="fw-bold fs-6 text-gray-800 me-2"><button
+                                                                class="btn btn-success"><?= icon("database"); ?> Salvar Dados do Funcionário</button></span>
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <!--end::Input group-->
+
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+
+                                    <div class="card mb-5 mb-xl-10 tab-pane fade"
+                                         id="kt_logs_details_view" role="tabpanel" aria-labelledby="nav-logs-tab">
+                                        <!--begin::Card header-->
+                                        <div class="card-header cursor-pointer">
+                                            <!--begin::Card title-->
+                                            <div class="card-title m-0">
+                                                <h3 class="fw-bold m-0">Atividades do Usuário</h3>
                                             </div>
                                             <!--end::Card title-->
                                         </div>
@@ -97,159 +297,61 @@
                                         <div class="card-body p-9">
                                             <!--begin::Row-->
                                             <div class="row mb-7">
-                                                <!--begin::Label-->
-                                                <label class="col-lg-3 fw-semibold text-muted">Nome Fantasia</label>
-                                                <!--end::Label-->
                                                 <!--begin::Col-->
-                                                <div class="col-lg-9">
-                                                    <span class="fw-bold fs-6 text-gray-800"><input type="text"
-                                                                                                    name="fname"
-                                                                                                    class="form-control form-control-lg  mb-3 mb-lg-0"
-                                                                                                    placeholder="Nome Fantasia da Empresa"
-                                                                                                    value=""/></span>
+                                                <div class="col-xl-12">
+                                                    <!--begin::Table Widget 5-->
+                                                    <div class="card card-flush h-xl-100">
+                                                        <!--begin::Card header-->
+                                                        <div class="card-header pt-7">
+                                                            <!--begin::Title-->
+                                                            <h3 class="card-title align-items-start flex-column">
+                                                                <span class="card-label fw-bold text-dark">Lista de Atividades</span>
+                                                                <span class="text-gray-400 mt-1 fw-semibold fs-6">Últimas 100 de um totao de 2.356 </span>
+                                                            </h3>
+                                                            <!--end::Title-->
+
+                                                        </div>
+                                                        <!--end::Card header-->
+                                                        <!--begin::Card body-->
+                                                        <div class="card-body">
+                                                            <!--begin::Table-->
+                                                            <table class="table align-middle table-row-dashed fs-6 gy-3" id="kt_table_widget_5_table">
+                                                                <!--begin::Table head-->
+                                                                <thead>
+                                                                <!--begin::Table row-->
+                                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                                    <th class="min-w-150px">#ID</th>
+                                                                    <th class="min-w-150px">Atividade</th>
+                                                                    <th class="text-end pe-3 min-w-100px">Data</th>
+                                                                </tr>
+                                                                <!--end::Table row-->
+                                                                </thead>
+                                                                <!--end::Table head-->
+                                                                <!--begin::Table body-->
+                                                                <tbody class="fw-bold text-gray-600">
+                                                                <tr>
+                                                                    <!--begin::Product ID-->
+                                                                    <td class="text">#35</td>
+                                                                    <!--end::Product ID-->
+                                                                    <!--begin::Product ID-->
+                                                                    <td class="text">#XGY-356</td>
+                                                                    <!--end::Product ID-->
+                                                                    <!--begin::Date added-->
+                                                                    <td class="text-end">02 Apr, 2023</td>
+                                                                    <!--end::Date added-->
+                                                                </tr>
+                                                                </tbody>
+                                                                <!--end::Table body-->
+                                                            </table>
+                                                            <!--end::Table-->
+                                                        </div>
+                                                        <!--end::Card body-->
+                                                    </div>
+                                                    <!--end::Table Widget 5-->
                                                 </div>
                                                 <!--end::Col-->
                                             </div>
                                             <!--end::Row-->
-
-                                            <!--begin::Input group-->
-                                            <div class="row mb-7">
-                                                <!--begin::Label-->
-                                                <label class="col-lg-3 fw-semibold text-muted">Razão Social</label>
-                                                <!--end::Label-->
-                                                <!--begin::Col-->
-                                                <div class="col-lg-9">
-                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
-                                                                class="form-control" type="text"
-                                                                placeholder="Razão Social da Empresa"
-                                                                value=""></span>
-                                                </div>
-                                                <!--end::Col-->
-                                            </div>
-                                            <!--end::Input group-->
-
-                                            <!--begin::Input group-->
-                                            <div class="row mb-7">
-                                                <!--begin::Label-->
-                                                <label class="col-lg-3 fw-semibold text-muted">CNPJ</label>
-                                                <!--end::Label-->
-                                                <!--begin::Col-->
-                                                <div class="col-lg-9">
-                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
-                                                                class="form-control" type="text"
-                                                                placeholder="Digite somente os números"
-                                                                value=""></span>
-                                                </div>
-                                                <!--end::Col-->
-                                            </div>
-                                            <!--end::Input group-->
-
-                                            <!--begin::Input group-->
-                                            <div class="row mb-7">
-                                                <!--begin::Label-->
-                                                <label class="col-lg-3 fw-semibold text-muted">Telefone / E-mail</label>
-                                                <!--end::Label-->
-                                                <!--begin::Col-->
-                                                <div class="col-lg-3">
-                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
-                                                                class="form-control" type="text"
-                                                                placeholder="Digite somente os números"
-                                                                value=""></span>
-                                                </div>
-                                                <!--end::Col-->
-
-                                                <!--begin::Col-->
-                                                <div class="col-lg-6">
-                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
-                                                                class="form-control" type="text"
-                                                                placeholder="Digite um e-mail válido"
-                                                                value=""></span>
-                                                </div>
-                                                <!--end::Col-->
-                                            </div>
-                                            <!--end::Input group-->
-
-                                            <!--begin::Input group-->
-                                            <div class="row mb-7">
-                                                <!--begin::Label-->
-                                                <label class="col-lg-3 fw-semibold text-muted">CEP / Logradouro / Nº</label>
-                                                <!--end::Label-->
-                                                <!--begin::Col-->
-                                                <div class="col-lg-3">
-                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
-                                                                class="form-control" type="text"
-                                                                placeholder="Digite o CEP"
-                                                                value=""></span>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-lg-4">
-                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
-                                                                class="form-control" type="text"
-                                                                placeholder="Logradouro"
-                                                                value=""></span>
-                                                </div>
-                                                <!--end::Col-->
-
-                                                <!--begin::Col-->
-                                                <div class="col-lg-2">
-                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
-                                                                class="form-control" type="text"
-                                                                placeholder="Número"
-                                                                value=""></span>
-                                                </div>
-                                                <!--end::Col-->
-
-                                            </div>
-                                            <!--end::Input group-->
-
-                                            <!--begin::Input group-->
-                                            <div class="row mb-7">
-                                                <!--begin::Label-->
-                                                <label class="col-lg-3 fw-semibold text-muted">Bairro / Cidade / UF</label>
-                                                <!--end::Label-->
-                                                <!--begin::Col-->
-                                                <div class="col-lg-3">
-                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
-                                                                class="form-control" type="text"
-                                                                placeholder="Bairro"
-                                                                value=""></span>
-                                                </div>
-                                                <!--end::Col-->
-
-                                                <!--begin::Col-->
-                                                <div class="col-lg-3">
-                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
-                                                                class="form-control" type="text"
-                                                                placeholder="Cidade"
-                                                                value=""></span>
-                                                </div>
-                                                <!--end::Col-->
-
-                                                <!--begin::Col-->
-                                                <div class="col-lg-3">
-                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
-                                                                class="form-control" type="text"
-                                                                placeholder="UF"
-                                                                value=""></span>
-                                                </div>
-                                                <!--end::Col-->
-                                            </div>
-                                            <!--end::Input group-->
-
-                                            <!--begin::Input group-->
-                                            <div class="row mb-7">
-                                                <!--begin::Label-->
-                                                <label class="col-lg-3 fw-semibold text-muted"></label>
-                                                <!--end::Label-->
-                                                <!--begin::Col-->
-                                                <div class="col-lg-9">
-                                                    <span class="fw-bold fs-6 text-gray-800 me-2"><button
-                                                                class="btn btn-success"><?= icon("database"); ?> Salvar Dados da Empresa</button></span>
-                                                </div>
-                                                <!--end::Col-->
-                                            </div>
-                                            <!--end::Input group-->
 
                                         </div>
                                         <!--end::Card body-->
@@ -346,7 +448,7 @@
     <!--end::Custom Javascript-->
 
     <!--begin::Modules Javascript-->
-    <script src="<?= url("/modules/PanelAccountCompanyData.js"); ?>" type="module"></script>
+    <script src="<?= url("/modules/PanelAccountEmployeeData.js"); ?>" type="module"></script>
     <!--end::Modules Javascript-->
 
 <?php $v->stop(); ?>

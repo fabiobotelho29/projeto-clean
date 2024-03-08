@@ -227,3 +227,8 @@ define("LIMITE_PAGINACAO", 30);
 define("FACEBOOK", "");
 define("INSTAGRAM", "");
 define("TIKTOK", "");
+
+#############################
+### CHAVE DE CRIPTOGRAFIA ###
+#############################
+define("KEY_CRIPT", mb_strtoupper(substr(md5(uniqid(rand(), true)), rand(1, 10), 32)));

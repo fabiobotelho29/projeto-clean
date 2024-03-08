@@ -80,7 +80,6 @@ class PanelController extends Controller
 
     public function CompanyData(?array $data): void
     {
-
         $seo = $this->seo
             ->title(SEO_SITE_NAME . " | Painel do Usuário")
             ->favicon()->render();
@@ -95,13 +94,26 @@ class PanelController extends Controller
 
     public function EmployeesManage(?array $data): void
     {
-
         $seo = $this->seo
             ->title(SEO_SITE_NAME . " | Painel do Usuário")
             ->favicon()->render();
 
         echo $this->view->render(
             "account-employees-manage",
+            [
+                "seo" => $seo,
+            ]
+        );
+    }
+
+    public function EmployeeData(?array $data): void
+    {
+        $seo = $this->seo
+            ->title(SEO_SITE_NAME . " | Painel do Usuário")
+            ->favicon()->render();
+
+        echo $this->view->render(
+            "account-employees-employee-data",
             [
                 "seo" => $seo,
             ]
