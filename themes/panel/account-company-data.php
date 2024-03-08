@@ -88,7 +88,7 @@
                                         <div class="card-header cursor-pointer">
                                             <!--begin::Card title-->
                                             <div class="card-title m-0">
-                                                <h3 class="fw-bold m-0">Alteração de Senha</h3>
+                                                <h3 class="fw-bold m-0">Dados da Empresa</h3>
                                             </div>
                                             <!--end::Card title-->
                                         </div>
@@ -98,14 +98,14 @@
                                             <!--begin::Row-->
                                             <div class="row mb-7">
                                                 <!--begin::Label-->
-                                                <label class="col-lg-3 fw-semibold text-muted">Senha Atual</label>
+                                                <label class="col-lg-3 fw-semibold text-muted">Nome Fantasia</label>
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-9">
                                                     <span class="fw-bold fs-6 text-gray-800"><input type="text"
                                                                                                     name="fname"
                                                                                                     class="form-control form-control-lg  mb-3 mb-lg-0"
-                                                                                                    placeholder="Digite a senha atual"
+                                                                                                    placeholder="Nome Fantasia da Empresa"
                                                                                                     value=""/></span>
                                                 </div>
                                                 <!--end::Col-->
@@ -115,21 +115,13 @@
                                             <!--begin::Input group-->
                                             <div class="row mb-7">
                                                 <!--begin::Label-->
-                                                <label class="col-lg-3 fw-semibold text-muted">Nova Senha
-                                                    <span class="ms-1" data-bs-toggle="tooltip"
-                                                          title="Deve conter no mínimo 8 dígitos">
-													<i class="ki-duotone ki-information fs-7">
-														<span class="path1"></span>
-														<span class="path2"></span>
-														<span class="path3"></span>
-													</i>
-												</span></label>
+                                                <label class="col-lg-3 fw-semibold text-muted">Razão Social</label>
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-9">
                                                     <span class="fw-bold fs-8 text-gray-800 me-2"><input
                                                                 class="form-control" type="text"
-                                                                placeholder="Digite a nova senha"
+                                                                placeholder="Razão Social da Empresa"
                                                                 value=""></span>
                                                 </div>
                                                 <!--end::Col-->
@@ -139,27 +131,86 @@
                                             <!--begin::Input group-->
                                             <div class="row mb-7">
                                                 <!--begin::Label-->
-                                                <label class="col-lg-3 fw-semibold text-muted">Repita a Nova Senha
-                                                    <span class="ms-1" data-bs-toggle="tooltip"
-                                                          title="Deve ser idêntica à nova senha">
-													<i class="ki-duotone ki-information fs-7">
-														<span class="path1"></span>
-														<span class="path2"></span>
-														<span class="path3"></span>
-													</i>
-												</span></label>
+                                                <label class="col-lg-3 fw-semibold text-muted">CNPJ</label>
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-9">
                                                     <span class="fw-bold fs-8 text-gray-800 me-2"><input
                                                                 class="form-control" type="text"
-                                                                placeholder="Repita a nova senha"
+                                                                placeholder="Digite somente os números"
                                                                 value=""></span>
                                                 </div>
                                                 <!--end::Col-->
                                             </div>
                                             <!--end::Input group-->
 
+                                            <!--begin::Input group-->
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-3 fw-semibold text-muted">CEP / Logradouro / Nº</label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-3">
+                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
+                                                                class="form-control" type="text"
+                                                                placeholder="Digite o CEP"
+                                                                value=""></span>
+                                                </div>
+                                                <!--end::Col-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-4">
+                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
+                                                                class="form-control" type="text"
+                                                                placeholder="Logradouro"
+                                                                value=""></span>
+                                                </div>
+                                                <!--end::Col-->
+
+                                                <!--begin::Col-->
+                                                <div class="col-lg-2">
+                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
+                                                                class="form-control" type="text"
+                                                                placeholder="Número"
+                                                                value=""></span>
+                                                </div>
+                                                <!--end::Col-->
+
+                                            </div>
+                                            <!--end::Input group-->
+
+                                            <!--begin::Input group-->
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-3 fw-semibold text-muted">Bairro / Cidade / UF</label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-3">
+                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
+                                                                class="form-control" type="text"
+                                                                placeholder="Bairro"
+                                                                value=""></span>
+                                                </div>
+                                                <!--end::Col-->
+
+                                                <!--begin::Col-->
+                                                <div class="col-lg-3">
+                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
+                                                                class="form-control" type="text"
+                                                                placeholder="Cidade"
+                                                                value=""></span>
+                                                </div>
+                                                <!--end::Col-->
+
+                                                <!--begin::Col-->
+                                                <div class="col-lg-3">
+                                                    <span class="fw-bold fs-8 text-gray-800 me-2"><input
+                                                                class="form-control" type="text"
+                                                                placeholder="UF"
+                                                                value=""></span>
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <!--end::Input group-->
 
                                             <!--begin::Input group-->
                                             <div class="row mb-7">
@@ -169,7 +220,7 @@
                                                 <!--begin::Col-->
                                                 <div class="col-lg-9">
                                                     <span class="fw-bold fs-6 text-gray-800 me-2"><button
-                                                                class="btn btn-success"><?= icon("refresh"); ?>Alterar Senha</button></span>
+                                                                class="btn btn-success"><?= icon("database"); ?> Salvar Dados da Empresa</button></span>
                                                 </div>
                                                 <!--end::Col-->
                                             </div>
@@ -270,7 +321,7 @@
     <!--end::Custom Javascript-->
 
     <!--begin::Modules Javascript-->
-    <script src="<?= url("/modules/panelAccountProfileChangePassword.js"); ?>" type="module"></script>
+    <script src="<?= url("/modules/PanelAccountCompanyData.js"); ?>" type="module"></script>
     <!--end::Modules Javascript-->
 
 <?php $v->stop(); ?>

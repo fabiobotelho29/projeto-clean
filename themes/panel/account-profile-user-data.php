@@ -243,7 +243,7 @@
                                                 <!--begin::Col-->
                                                 <div class="col-lg-8">
                                                     <span class="fw-bold fs-6 text-gray-800 me-2"><button
-                                                                class="btn btn-success">Salvar Dados</button></span>
+                                                                class="btn btn-success"><?= icon("database"); ?> Salvar Dados</button></span>
                                                 </div>
                                                 <!--end::Col-->
                                             </div>

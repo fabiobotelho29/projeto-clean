@@ -27,6 +27,7 @@ $route->group("panel");
 $route->get('/dashboard', 'PanelController::index', 'PanelControllerIndex');
 $route->get('/account/profile/user-data', 'PanelController::ProfileUserData', '`PanelControllerProfileUserData`');
 $route->get('/account/profile/change-password', 'PanelController::ProfileChangePassword', '`PanelControllerProfileChangePassworda`');
+$route->get('/account/company/data', 'PanelController::CompanyData', '`PanelControllerCompanyData`');
 
 /** ADMIN */
 $route->group("admin");
