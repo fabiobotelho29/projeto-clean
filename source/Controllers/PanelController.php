@@ -62,4 +62,19 @@ class PanelController extends Controller
             ]
         );
     }
+
+    public function ProfileChangePassword(?array $data): void
+    {
+
+        $seo = $this->seo
+            ->title(SEO_SITE_NAME . " | Painel do Usuário")
+            ->favicon()->render();
+
+        echo $this->view->render(
+            "account-profile-change-password",
+            [
+                "seo" => $seo,
+            ]
+        );
+    }
 }

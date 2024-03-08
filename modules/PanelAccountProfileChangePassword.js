@@ -15,10 +15,10 @@ document.querySelector(".js-sidebar-menu").innerHTML = SidebarMenu();
 
 // Breadcrumb
 const BreadcrumbLinks = [
-    "Sua Conta", "Perfil", "Seus Dados"
+    "Sua Conta", "Perfil", "Alterar Senha"
 ]
 
-document.querySelector(".js-breadcrumb").innerHTML = Breadcrumb('Seus Dados', BreadcrumbLinks);
+document.querySelector(".js-breadcrumb").innerHTML = Breadcrumb('Alterar Senha', BreadcrumbLinks);
 
 // Footer
 document.querySelector(".js-footer").innerHTML = Footer();
