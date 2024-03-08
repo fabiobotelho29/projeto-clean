@@ -125,7 +125,7 @@ export const SidebarMenu = () => {
                 <div class="menu-sub menu-sub-accordion">
                     <!--begin:Menu item-->
                     <div class="menu-item">
-                        ${MenuLink(SYSTEM_URL()+'/panel/account/profile/user-data', 'Gerenciar')}
+                        ${MenuLink(SYSTEM_URL()+'/panel/account/employees/manage', 'Gerenciar')}
                     </div>
                     <!--end:Menu item-->
 

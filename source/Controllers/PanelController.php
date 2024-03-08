@@ -77,6 +77,7 @@ class PanelController extends Controller
             ]
         );
     }
+
     public function CompanyData(?array $data): void
     {
 
@@ -86,6 +87,21 @@ class PanelController extends Controller
 
         echo $this->view->render(
             "account-company-data",
+            [
+                "seo" => $seo,
+            ]
+        );
+    }
+
+    public function EmployeesManage(?array $data): void
+    {
+
+        $seo = $this->seo
+            ->title(SEO_SITE_NAME . " | Painel do Usuário")
+            ->favicon()->render();
+
+        echo $this->view->render(
+            "account-employees-manage",
             [
                 "seo" => $seo,
             ]
