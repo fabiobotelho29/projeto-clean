@@ -98,7 +98,7 @@ var KTSignupGeneral = function () {
             validator.revalidateField('password');
 
             validator.validate().then(function (status) {
-                if (status == 'Valid') {
+                if (status === 'Valid') {
                     // Show loading indication
                     submitButton.setAttribute('data-kt-indicator', 'on');
 
@@ -348,6 +348,6 @@ var KTSignupGeneral = function () {
 }();
 
 // On document ready
-KTUtil.onDOMContentLoaded(function () {
-    KTSignupGeneral.init();
-});
+// KTUtil.onDOMContentLoaded(function () {
+//     KTSignupGeneral.init();
+// });

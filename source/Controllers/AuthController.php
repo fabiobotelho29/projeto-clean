@@ -5,6 +5,7 @@
 
 namespace Source\Controllers;
 
+use CoffeeCode\Router\Router;
 use Source\Core\Connect;
 use Source\Core\Controller;
 
@@ -14,13 +15,18 @@ use Source\Core\Controller;
  */
 class AuthController extends Controller
 {
+
+    protected $router;
+
     /**
      * TestController constructor.
      */
-    public function __construct()
+    public function __construct($router)
     {
+
         $pathToViews = __DIR__ . "/../../themes/" . VIEWS_PANEL_THEME . "/";
         parent::__construct($pathToViews);
+        $this->router = $router;
     }
 
     /**
@@ -45,6 +51,7 @@ class AuthController extends Controller
             "authentication/sign-up/register",
             [
                 "seo" => $seo,
+                "router" => $this->router
             ]
         );
     }

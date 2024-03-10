@@ -8,38 +8,38 @@ $timezone_identifier = "America/Sao_Paulo";
 date_default_timezone_set($timezone_identifier);
 
 use CoffeeCode\Router\Router;
-$route = new Router("", "::");
-
+$router = new Router("", "::");
 
 /** NAMESPACE */
-$route->namespace("Source\Controllers");
+$router->namespace("Source\Controllers");
 
 /** FRONT */
-$route->get('/', 'FrontController::home');
+$router->get('/', 'FrontController::home');
 
 /** AUTHENTICATION */
-$route->group("auth");
-$route->get('/register', 'AuthController::register', 'AuthControllerRegister');
-$route->get('/login', 'AuthController::login', 'AuthControllerLogin');
+$router->group("auth");
+$router->get('/register', 'AuthController::register', 'AuthControllerRegister');
+$router->get('/login', 'AuthController::login', 'AuthControllerLogin');
 
 /** PANEL */
-$route->group("panel");
-$route->get('/dashboard', 'PanelController::index', 'PanelControllerIndex');
-$route->get('/account/profile/user-data', 'PanelController::ProfileUserData', 'PanelControllerProfileUserData');
-$route->get('/account/profile/change-password', 'PanelController::ProfileChangePassword', 'PanelControllerProfileChangePassword');
-$route->get('/account/company/data', 'PanelController::CompanyData', 'PanelControllerCompanyData');
-$route->get('/account/employees/manage', 'PanelController::EmployeesManage', 'PanelControllerEmployeesManage');
-$route->get('/account/employees/employee-data/{employee_code}', 'PanelController::EmployeeData', 'PanelControllerEmployeeData');
+$router->group("panel");
+$router->get('/test', 'PanelController::testvue', 'PanelControllerTestVue');
+$router->get('/dashboard', 'PanelController::index', 'PanelControllerIndex');
+$router->get('/account/profile/user-data', 'PanelController::ProfileUserData', 'PanelControllerProfileUserData');
+$router->get('/account/profile/change-password', 'PanelController::ProfileChangePassword', 'PanelControllerProfileChangePassword');
+$router->get('/account/company/data', 'PanelController::CompanyData', 'PanelControllerCompanyData');
+$router->get('/account/employees/manage', 'PanelController::EmployeesManage', 'PanelControllerEmployeesManage');
+$router->get('/account/employees/employee-data/{employee_code}', 'PanelController::EmployeeData', 'PanelControllerEmployeeData');
 
 /** ADMIN */
-$route->group("admin");
-$route->get('/admin', 'Admin::login');
+$router->group("admin");
+$router->get('/admin', 'Admin::login');
 
 /** API */
-$route->group("api");
-$route->post('/api/registerUser', 'ApiController::registerUser');
+$router->group("api");
+$router->post('/api/registerUser', 'ApiController::registerUser');
 
 /** DESPACHANDO ROTAS */
-$route->dispatch();
+$router->dispatch();
 
 ob_end_flush();

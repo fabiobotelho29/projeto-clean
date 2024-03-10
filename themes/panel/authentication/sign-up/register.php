@@ -22,8 +22,8 @@
                         ao <?= SEO_SITE_NAME; ?></h1>
                     <!--end::Title-->
                     <!--begin::Description-->
-                    <p class="d-none d-lg-block fw-semibold fs-2 text-white">Cadastre-se e comece hoje mesmo
-                        <br/>a controlar de forma automatizada seus <br>gastos e seus ganhos com aplicativos</p>
+                    <p class="d-none d-lg-block fw-semibold fs-2 text-white">Cadastre sua empresa e comece hoje mesmo
+                        <br/>a controlar de forma automatizada seus <br>todo o seu processo de lavagens</p>
                     <!--end::Description-->
                 </div>
                 <!--end::Header-->
@@ -51,18 +51,13 @@
                             <!--end::Title-->
                             <!--begin::Link-->
                             <div class="text-gray-400 fw-semibold fs-4">Já tem uma conta?
-                                <a href="../dist/authentication/sign-in/basic.html" class="link-primary fw-bold">Faça
+
+                                <a href="<?= url($router->route('AuthControllerLogin')); ?>" class="link-primary fw-bold">Faça
                                     login</a></div>
                             <!--end::Link-->
                         </div>
                         <!--end::Heading-->
-                        <!--begin::Action-->
-                        <button type="button" class="btn btn-light-primary fw-bold w-100 mb-10">
-                            <img alt="Logo"
-                                 src="<?= views_theme(VIEWS_PANEL_THEME); ?>/assets/media/svg/brand-logos/google-icon.svg"
-                                 class="h-20px me-3"/>Sign in with Google
-                        </button>
-                        <!--end::Action-->
+
                         <!--begin::Separator-->
                         <div class="d-flex align-items-center mb-10">
                             <div class="border-bottom border-gray-300 mw-50 w-100"></div>
@@ -76,14 +71,14 @@
                             <div class="col-xl-6">
                                 <label class="form-label fw-bold text-dark fs-6">Primeiro Nome</label>
                                 <input class="form-control form-control-lg form-control-solid" type="text"
-                                       placeholder="" name="first-name" autocomplete="off"/>
+                                       placeholder="Ex: Marcos" name="first-name" autocomplete="off"/>
                             </div>
                             <!--end::Col-->
                             <!--begin::Col-->
                             <div class="col-xl-6">
                                 <label class="form-label fw-bold text-dark fs-6">Sobrenome(s)</label>
                                 <input class="form-control form-control-lg form-control-solid" type="text"
-                                       placeholder="" name="last-name" autocomplete="off"/>
+                                       placeholder="Ex. da Silva Medeiros" name="last-name" autocomplete="off"/>
                             </div>
                             <!--end::Col-->
                         </div>
@@ -91,7 +86,7 @@
                         <!--begin::Input group-->
                         <div class="fv-row mb-7">
                             <label class="form-label fw-bold text-dark fs-6">Email</label>
-                            <input class="form-control form-control-lg form-control-solid" type="email" placeholder=""
+                            <input class="form-control form-control-lg form-control-solid" type="email" placeholder="Ex: marcos@email.com"
                                    name="email" autocomplete="off"/>
                         </div>
                         <!--end::Input group-->
@@ -105,7 +100,7 @@
                                 <!--begin::Input wrapper-->
                                 <div class="position-relative mb-3">
                                     <input class="form-control form-control-lg form-control-solid" type="password"
-                                           placeholder="" name="password" autocomplete="off"/>
+                                           placeholder="********" name="password" autocomplete="off"/>
                                     <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2"
                                           data-kt-password-meter-control="visibility">
 												<i class="ki-duotone ki-eye-slash fs-2"></i>
@@ -124,7 +119,7 @@
                             </div>
                             <!--end::Wrapper-->
                             <!--begin::Hint-->
-                            <div class="text-muted">Use 8 ou mais caracteres misturando letras, números e símbolos.
+                            <div class="text-muted">Sua senha deve conter entre <?= CONF_PASSWD_MIN_LEN; ?> e <?= CONF_PASSWD_MAX_LEN; ?> caracteres.
                             </div>
                             <!--end::Hint-->
                         </div>
@@ -133,7 +128,7 @@
                         <div class="fv-row mb-5">
                             <label class="form-label fw-bold text-dark fs-6">Confirme sua senha</label>
                             <input class="form-control form-control-lg form-control-solid" type="password"
-                                   placeholder="" name="confirm-password" autocomplete="off"/>
+                                   placeholder="********" name="confirm-password" autocomplete="off"/>
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->

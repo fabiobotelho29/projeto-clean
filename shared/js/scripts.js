@@ -3,7 +3,7 @@ $(document).ready(function () {
     /* HOME */
     const HOME = $("link[rel='base']").attr("href");
 
-    function ajax_function(url, dataset) {
+    const ajax_function = (url, dataset) => {
 
         let clicked = $("#btn_clicked");
         let text = clicked.val();
@@ -90,6 +90,33 @@ $(document).ready(function () {
 
     }
 
+    const SwalFire = (text, icon, confirmButtonText = "Ok", cancelButtonText = "Cancelar", customClassConfirmButton = 'primary', customClassCancelButton ='danger') => {
+        Swal.fire({
+            text: text,
+            icon: icon, // success, error, warning, info, question
+            buttonsStyling: false,
+            confirmButtonText: confirmButtonText,
+            cancelButtonText: cancelButtonText,
+            showCancelButton: true,
+            customClass: {
+                confirmButton: "btn btn-"+customClassConfirmButton,
+                cancelButton: "btn btn-"+customClassCancelButton
+            }
+        }).then(function (result) {
+            console.log(result)
+            if (result.isConfirmed) {
+                console.log('Confirmado')
+                return
+            }
+            if (result.isDenied) {
+                console.log('Negado')
+                return
+            }
+            if (result.isDismissed) {
+                console.log('Cancelado')
+            }
+        });
+    }
 
     $("form.upload").on("submit", function (e) {
         e.preventDefault();
@@ -237,15 +264,6 @@ $(document).ready(function () {
 
     });
 
-    /************************
-     *** LINK DELETE DATA ***
-     ************************/
-
-
-    /************************
-     *** FUNÇÕES INTERNAS ***
-     ************************/
-
 
     /***********************
      *** SOMENTE NÚMEROS ***
@@ -272,42 +290,6 @@ $(document).ready(function () {
     });
 
     /********************
-     *** SWEET ALERTS ***
-     ********************/
-    function sweeAlert(type, title, html) {
-        Swal.fire({
-            type: type, // warning, error, success, info, question
-            title: title,
-            html: html
-        })
-    }
-
-    /**********************
-     *** JQUERY ALERTS ***
-     **********************/
-    function jqueryAlert(icon, title, content, type, btnText, redirect = false, url = null) {
-        $.confirm({
-            icon: icon,
-            title: title,
-            content: content,
-            type: type, // green, purple, orange, blue, dark
-            typeAnimated: true,
-            buttons: {
-                tryAgain: {
-                    text: btnText,
-                    btnClass: 'btn-' + type,
-                    action: function () {
-                        if (redirect) {
-                            window.location.href = url
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-
-    /********************
      *** MASK ELEMENTS ***
      *********************/
 
@@ -327,7 +309,7 @@ $(document).ready(function () {
     /**************************
      *** BUSCANDO CEP NA WEB ***
      ***************************/
-    function limpa_formulário_cep() {
+    function clean_zip_form() {
         // Limpa valores do formulário de cep.
         $("#rua").val("");
         $("#logradouro").val("");
@@ -341,13 +323,13 @@ $(document).ready(function () {
     $("#cep").blur(function () {
 
         //Nova variável "cep" somente com dígitos.
-        var cep = $(this).val().replace(/\D/g, '');
+        const cep = $(this).val().replace(/\D/g, '');
 
         //Verifica se campo cep possui valor informado.
-        if (cep != "") {
+        if ( cep !== "" ) {
 
             //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;
+            let validacep = /^[0-9]{8}$/;
 
             //Valida o formato do CEP.
             if (validacep.test(cep)) {
@@ -372,20 +354,20 @@ $(document).ready(function () {
                     } //end if.
                     else {
                         //CEP pesquisado não foi encontrado.
-                        limpa_formulário_cep();
-                        jqueryAlert("fa fa-times-circle", "Erro", "CEP não encontrado.", "dark", "Fechar");
+                        clean_zip_form();
                     }
                 });
             } //end if.
             else {
                 //cep é inválido.
-                limpa_formulário_cep();
-                jqueryAlert("fa fa-times-circle", "Erro", "Formato de CEP inválido.", "dark", "Fechar");
+                clean_zip_form();
             }
         } //end if.
         else {
             //cep sem valor, limpa formulário.
-            limpa_formulário_cep();
+            clean_zip_form();
         }
     });
+
+
 })
