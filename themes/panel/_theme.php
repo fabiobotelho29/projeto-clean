@@ -5462,10 +5462,11 @@
 <script src="<?= views_theme(VIEWS_PANEL_THEME); ?>/assets/js/scripts.bundle.js"></script>
 <!--end::Global Javascript Bundle-->
 
-<?= $v->section("JS"); ?>
-
 <!--begin::Own Javascript-->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<?= $v->section("JS"); ?>
+
 <script src="<?= url("/assets/js/own_scripts.js"); ?>"></script>
 <!--end::Own Javascript-->
 

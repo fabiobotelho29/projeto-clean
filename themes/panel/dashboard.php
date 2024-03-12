@@ -64,7 +64,13 @@
                             <!--begin::Toolbar wrapper-->
                             <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
                                 <!--begin::Page title-->
-                                <?php include ('includes/page-title.php'); ?>
+                                <?php // include ('includes/page-title.php'); ?>
+
+                                <div class="page-title d-flex flex-column gap-1 me-3 mb-2 js-breadcrumb" id="vue-breadcrumb">
+                                    <Breadcrumb :pagetitle="pagetitle" :links="links" />
+                                </div>
+
+
                                 <!--end::Page title-->
                                 <?php if (false): ?>
                                     <!--begin::Actions-->
@@ -93,7 +99,7 @@
                                         <div class="card-header pt-5">
                                             <!--begin::Title-->
                                             <h3 class="card-title align-items-start flex-column">
-                                                <span class="card-label fw-bold text-dark">Performance Overview</span>
+                                                <span class="card-label fw-bold text-dark">Performance Overview <span id="nametest"><nametest></nametest></span></span>
                                                 <span class="text-gray-400 mt-1 fw-semibold fs-6">Users from all channels</span>
                                             </h3>
                                             <!--end::Title-->
@@ -2038,6 +2044,7 @@
 <!--end::Custom Javascript-->
 
 <!--begin::Modules Javascript-->
-<script src="<?= url("/modules/PanelDashboard.js");?>" type="module"></script>
+<!--<script src="--><?//= url("/modules/PanelDashboard.js");?><!--" type="module"></script>-->
+<script src="<?= views_theme(VIEWS_PANEL_THEME); ?>/_vue/Dashboard.js" type="module"></script>
 <!--end::Modules Javascript-->
 <?php $v->stop(); ?>

@@ -1,6 +1,8 @@
 const buttoncounter = Vue.component('button-counter', {
 
-    //propriedades vindas do elemento pai
+ cc c
+ bg
+ bg0ggggg//0p1opriedades vindas do elemento pai
     props: ['name', 'nickname'],
 
     // informações de retorno para o componente
@@ -11,7 +13,7 @@ const buttoncounter = Vue.component('button-counter', {
     },
 
     // renderização
-    template: '<button v-on:click="count++">{{ name }} ({{ nickname }}), você clicou em mim {{ count }} vezes.</button>'
+    template: '<button v-on:click="count++" title="{{ name }}">{{ name }} ({{ nickname }}), você clicou em mim {{ count }} vezes.</button>'
 })
 
 export default buttoncounter

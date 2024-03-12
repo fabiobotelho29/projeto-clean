@@ -6,7 +6,8 @@ import { MenuLink } from "../components/MenuLink.js";
 export const SidebarMenu = () => {
 
     return `
-<!--begin:Dashboard item-->
+    
+    <!--begin:Dashboard item-->
     <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
         <!--begin:Menu link-->
         <span class="menu-link">

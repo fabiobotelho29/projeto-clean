@@ -1,17 +1,19 @@
-const buttoncounter = Vue.component('button-counter', {
+const nametest = Vue.component('nametet', {
 
     //propriedades vindas do elemento pai
-    props: ['name', 'nickname'],
+    props: [],
 
     // informações de retorno para o componente
     data: function () {
         return {
-            count: 0
+            name: 'Fabio C. Botelho'
         }
     },
 
     // renderização
-    template: '<button v-on:click="count++">{{ name }} ({{ nickname }}), você clicou em mim {{ count }} vezes.</button>'
+    template: `
+    <p>Meu nome é {{ name }} </p>
+    `
 })
 
-export default buttoncounter
+export default nametest

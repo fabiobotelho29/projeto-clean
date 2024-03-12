@@ -24,7 +24,7 @@ $router->get('/login', 'AuthController::login', 'AuthControllerLogin');
 /** PANEL */
 $router->group("panel");
 $router->get('/test', 'PanelController::testvue', 'PanelControllerTestVue');
-$router->get('/dashboard', 'PanelController::index', 'PanelControllerIndex');
+$router->get('/dashboard', 'PanelController::dashboard', 'PanelControllerDashboard');
 $router->get('/account/profile/user-data', 'PanelController::ProfileUserData', 'PanelControllerProfileUserData');
 $router->get('/account/profile/change-password', 'PanelController::ProfileChangePassword', 'PanelControllerProfileChangePassword');
 $router->get('/account/company/data', 'PanelController::CompanyData', 'PanelControllerCompanyData');

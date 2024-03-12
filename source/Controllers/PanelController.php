@@ -34,14 +34,14 @@ class PanelController extends Controller
      * @param array $data
      */
 
-    public function index(?array $data): void
+    public function dashboard(?array $data): void
     {
         $seo = $this->seo
             ->title(SEO_SITE_NAME . " : : Dashboard")
             ->favicon()->render();
 
         echo $this->view->render(
-            "index",
+            "dashboard",
             [
                 "seo" => $seo,
             ]
