@@ -84,37 +84,6 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                 <!--end:Menu sub-->
             </div>
             <!--end:Menu item-->
-            
-            <!--begin:Module item-->
-            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                <!--begin:Menu link-->
-                <span class="menu-link">
-					<span class="menu-bullet">
-						<span class="bullet bullet-dot"></span>
-					</span>
-					<span class="menu-title">Financeiro</span>
-					<span class="menu-arrow"></span>
-				</span>
-                <!--end:Menu link-->
-                <!--begin:Menu sub-->
-                <div class="menu-sub menu-sub-accordion">
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                         <!--begin:Menu link-->
-                        <a class="menu-link" link="https://google.com">
-						        <span class="menu-bullet">
-						        	<span class="bullet bullet-dot"></span>
-						        </span>
-                            <span class="menu-title">Link</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>
-                    <!--end:Menu item-->
-
-                </div>
-                <!--end:Menu sub-->
-            </div>
-            <!--end:Menu item-->           
 
         </div>
         <!--end:Menu sub-->

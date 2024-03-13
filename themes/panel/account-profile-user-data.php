@@ -20,9 +20,10 @@
                     <?php include('includes/panel-logo.php'); ?>
                     <!--end::panelLogo-->
 
-                    <!--begin::Navbar-->
-                    <?php include('includes/nav-bar.php'); ?>
-                    <!--end::Navbar-->
+                    <navbar
+                            image_path="<?= views_theme(VIEWS_PANEL_THEME); ?>/assets/media/avatars/300-2.jpg"
+                            :user="user"
+                    />
                 </div>
                 <!--end::Header main-->
                 <!--begin::Separator-->
@@ -43,7 +44,12 @@
                          data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_header"
                          data-kt-scroll-wrappers="#kt_app_main" data-kt-scroll-offset="5px">
 
-                        <?php include 'includes/sidebar-menu.php'; ?>
+                        <!--begin::Sidebar menu-->
+                        <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false"
+                             class="flex-column-fluid menu menu-sub-indention menu-column menu-rounded menu-active-bg mb-7">
+                            <sidebarmenu />
+                        </div>
+                        <!--end::Sidebar menu-->
 
                     </div>
                     <!--end::Main-->
@@ -61,7 +67,9 @@
                                 <!--begin::Toolbar wrapper-->
                                 <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
                                     <!--begin::Page title-->
-                                    <?php include('includes/page-title.php'); ?>
+                                    <div class="page-title d-flex flex-column gap-1 me-3 mb-2 js-breadcrumb" id="vue-breadcrumb">
+                                        <Breadcrumb :pagetitle="pagetitle" :links="links" />
+                                    </div>
                                     <!--end::Page title-->
                                     <?php if (false): ?>
                                         <!--begin::Actions-->
@@ -419,7 +427,7 @@
     <!--end::Custom Javascript-->
 
     <!--begin::Modules Javascript-->
-    <script src="<?= url("/modules/panelAccountProfileUserdata.js"); ?>" type="module"></script>
+    <script src="<?= views_theme(VIEWS_PANEL_THEME); ?>/_vue/AccountProfileUserdata.js" type="module"></script>
     <!--end::Modules Javascript-->
 
 <?php $v->stop(); ?>
