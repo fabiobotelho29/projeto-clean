@@ -1,7 +1,7 @@
 const SidebarLink = Vue.component('SidebarLink', {
 
     // propriedades vindas do elemento pai
-    props: ["content"],
+    props: ["link", "text"],
 
     // informações de retorno para o componente
     data: function () {
@@ -18,11 +18,11 @@ const SidebarLink = Vue.component('SidebarLink', {
         <!--begin:Menu item-->
 		<div class="menu-item">
 			<!--begin:Menu link-->
-			<a class="menu-link" :href="content.href">
+			<a class="menu-link" :href="link">
 				<span class="menu-bullet">
 					<span class="bullet bullet-dot"></span>
 				</span>
-				<span class="menu-title">{{ content.text }}</span>
+				<span class="menu-title" style="font-weight: bold; font-size: 1.2em; color: #92929F">{{ text }}</span>
 			</a>
 			<!--end:Menu link-->
 		</div>

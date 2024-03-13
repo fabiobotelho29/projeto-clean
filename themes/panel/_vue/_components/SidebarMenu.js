@@ -9,65 +9,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
 
     // informações de retorno para o componente
     data: function () {
-
-        return {
-            menu_dashboard: {
-                icon: 'ki-duotone ki-element-11 fs-1',
-                text: 'Dashboard',
-            },
-            menu_account: {
-                icon: 'ki-duotone ki-user fs-1',
-                text: 'Sua Conta',
-            },
-            sub_account_profile: {
-                icon: 'ki-duotone ki-to-right fs-1',
-                text: 'Perfil',
-            },
-            link_account_userdata: {
-                href: `${SYSTEM_URL()}/panel/account/profile/user-data`,
-                text: 'Dados Usuário'
-            },
-            link_account_changepassword: {
-                href: `${SYSTEM_URL()}/panel/account/profile/change-password`,
-                text: 'Alterar Senha'
-            },
-            sub_account_company: {
-                icon: 'ki-duotone ki-to-right fs-1',
-                text: 'Empresa',
-            },
-            link_account_companydata: {
-                href: `${SYSTEM_URL()}/panel/account/company/data`,
-                text: 'Dados'
-            },
-            sub_account_employees: {
-                icon: 'ki-duotone ki-to-right fs-1',
-                text: 'Funcionários',
-            },
-            link_account_manageemployees: {
-                href: `${SYSTEM_URL()}/panel/account/employees/manage`,
-                text: 'Gerenciar'
-            },
-            menu_modules: {
-                icon: 'ki-duotone ki-gear fs-1',
-                text: 'Módulos',
-            },
-            menu_reports: {
-                icon: 'ki-duotone ki-filter-tablet fs-1',
-                text: 'Relatórios',
-            },
-            menu_trainings: {
-                icon: 'ki-duotone ki-youtube fs-1',
-                text: 'Treinamentos',
-            },
-            menu_support: {
-                icon: 'ki-duotone ki-rescue fs-1',
-                text: 'Suporte',
-            },
-            link_dashboard_index: {
-                href: `${SYSTEM_URL()}/panel/dashboard`,
-                text: 'Visão Geral'
-            }
-        }
+        return {}
     },
     components: {
         SidebarTitle: SidebarTitle
@@ -78,13 +20,13 @@ const SidebarMenu = Vue.component('sidebarmenu', {
    <div>
 
 <!--begin:Dashboard item-->
-    <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
+    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
         
-        <SidebarTitle :content="menu_dashboard" />
+        <SidebarTitle icon="ki-duotone ki-element-11 fs-1" text="Dashboard" />
         
         <!--begin:Menu sub-->
 		<div class="menu-sub menu-sub-accordion">
-		    <SidebarLink :content="link_dashboard_index" />										
+		    <SidebarLink link="${SYSTEM_URL()}/panel/dashboard" text="Visão Geral" />										
 		</div>
 		<!--end:Menu sub-->
 		
@@ -94,7 +36,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
     <!--begin:Account item-->
     <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
         
-        <SidebarTitle :content="menu_account" />
+        <SidebarTitle icon="ki-duotone ki-user fs-1" text="Sua Conta" />
        
        <!--begin:Menu sub-->
         <div class="menu-sub menu-sub-accordion">
@@ -102,13 +44,13 @@ const SidebarMenu = Vue.component('sidebarmenu', {
             <!--begin:Module item-->
             <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
             
-            <SidebarTitle :content="sub_account_profile" />
+            <SidebarTitle icon="ki-duotone ki-to-right fs-1" text="Perfil" />
             
                 <!--begin:Menu sub-->
                 <div class="menu-sub menu-sub-accordion">
                 
-                    <SidebarLink :content="link_account_userdata" />
-                    <SidebarLink :content="link_account_changepassword" />
+                    <SidebarLink link="${SYSTEM_URL()}/panel/account/profile/user-data" text="Seus Dados" />
+                    <SidebarLink link="${SYSTEM_URL()}/panel/account/profile/change-password" text="Sua Senha" />
 
                 </div>
                 <!--end:Menu sub-->                
@@ -118,12 +60,12 @@ const SidebarMenu = Vue.component('sidebarmenu', {
             <!--begin:Module item-->
             <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
             
-               <SidebarTitle :content="sub_account_company" />
+               <SidebarTitle icon="ki-duotone ki-to-right fs-1" text="Empresa" />
                
                 <!--begin:Menu sub-->
                 <div class="menu-sub menu-sub-accordion">
                     
-                    <SidebarLink :content="link_account_companydata" />
+                    <SidebarLink link="${SYSTEM_URL()}/panel/account/company/data" text="Dados" />
                     
                 </div>
                 <!--end:Menu sub-->
@@ -133,11 +75,11 @@ const SidebarMenu = Vue.component('sidebarmenu', {
             <!--begin:Module item-->
             <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
             
-                <SidebarTitle :content="sub_account_employees" />
+                <SidebarTitle icon="ki-duotone ki-to-right fs-1" text="Funcionários" />
 
                 <!--begin:Menu sub-->
                 <div class="menu-sub menu-sub-accordion">
-                    <SidebarLink :content="link_account_manageemployees" />
+                    <SidebarLink link="${SYSTEM_URL()}/panel/account/employees/manage" text="Gerenciar" />                    
                 </div>
                 <!--end:Menu sub-->
             </div>
@@ -159,7 +101,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                     <!--begin:Menu item-->
                     <div class="menu-item">
                          <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -172,8 +114,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                 </div>
                 <!--end:Menu sub-->
             </div>
-            <!--end:Menu item-->
-           
+            <!--end:Menu item-->           
 
         </div>
         <!--end:Menu sub-->
@@ -183,7 +124,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
     <!--begin:Modules item-->
     <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
         
-        <SidebarTitle :content="menu_modules" />
+        <SidebarTitle icon="ki-duotone ki-gear fs-1" text="Módulos" />
         
        <!--begin:Menu sub-->
         <div class="menu-sub menu-sub-accordion">
@@ -203,7 +144,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                     <!--begin:Menu item-->
                     <div class="menu-item">
                          <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -216,7 +157,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                     <div class="menu-item">
                         <!--begin:Menu link-->
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -248,7 +189,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                     <!--begin:Menu item-->
                     <div class="menu-item">
                          <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -261,7 +202,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                     <div class="menu-item">
                         <!--begin:Menu link-->
                          <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -275,8 +216,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                 </div>
                 <!--end:Menu sub-->
             </div>
-            <!--end:Menu item-->
-           
+            <!--end:Menu item-->           
             
             <!--begin:Module item-->
             <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -294,7 +234,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                     <!--begin:Menu item-->
                     <div class="menu-item">
                          <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -306,7 +246,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
 
                     <div class="menu-item">
                          <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -319,8 +259,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                 </div>
                 <!--end:Menu sub-->
             </div>
-            <!--end:Menu item-->
-           
+            <!--end:Menu item-->           
 
         </div>
         <!--end:Menu sub-->
@@ -331,7 +270,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
     <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
         
         
-        <SidebarTitle :content="menu_reports" />
+        <SidebarTitle icon="ki-duotone ki-filter-tablet fs-1" text="Relatórios" />
         
        <!--begin:Menu sub-->
         <div class="menu-sub menu-sub-accordion">
@@ -351,7 +290,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                     <!--begin:Menu item-->
                     <div class="menu-item">
                          <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -363,7 +302,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
 
                     <div class="menu-item">
                          <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -394,7 +333,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                     <!--begin:Menu item-->
                     <div class="menu-item">
                          <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -406,7 +345,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
 
                     <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -419,8 +358,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                 </div>
                 <!--end:Menu sub-->
             </div>
-            <!--end:Menu item-->
-           
+            <!--end:Menu item-->           
             
             <!--begin:Module item-->
             <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -438,7 +376,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                     <!--begin:Menu item-->
                     <div class="menu-item">
                          <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -450,7 +388,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
 
                     <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -463,8 +401,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
                 </div>
                 <!--end:Menu sub-->
             </div>
-            <!--end:Menu item-->
-           
+            <!--end:Menu item-->           
 
         </div>
         <!--end:Menu sub-->
@@ -474,14 +411,14 @@ const SidebarMenu = Vue.component('sidebarmenu', {
     <!--begin:Training item-->
     <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
         
-        <SidebarTitle :content="menu_trainings" />
+        <SidebarTitle icon="ki-duotone ki-youtube fs-1" text="Treinamentos" />
         
         <!--begin:Menu sub-->
         <div class="menu-sub menu-sub-accordion">
             <!--begin:Menu item-->
             <div class="menu-item">
                 <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -498,14 +435,14 @@ const SidebarMenu = Vue.component('sidebarmenu', {
     <!--begin:Support item-->
     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
         
-        <SidebarTitle :content="menu_support" />
+        <SidebarTitle icon="ki-duotone ki-question fs-1" text="Suporte" />
         
         <!--begin:Menu sub-->
         <div class="menu-sub menu-sub-accordion">
             <!--begin:Menu item-->
             <div class="menu-item">
                  <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>
@@ -517,7 +454,7 @@ const SidebarMenu = Vue.component('sidebarmenu', {
             <!--begin:Menu item-->
             <div class="menu-item">
                  <!--begin:Menu link-->
-                        <a class="menu-link" href="https://google.com">
+                        <a class="menu-link" link="https://google.com">
 						        <span class="menu-bullet">
 						        	<span class="bullet bullet-dot"></span>
 						        </span>

@@ -1,4 +1,4 @@
-const nametest = Vue.component('nametet', {
+const nametest = Vue.component('nametest', {
 
     //propriedades vindas do elemento pai
     props: [],

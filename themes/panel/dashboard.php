@@ -17,13 +17,39 @@
             <!--begin::Header main-->
             <div class="d-flex align-items-center flex-stack flex-grow-1">
 
-                <!--begin::PanelLogo-->
-                <?php include ('includes/panel-logo.php'); ?>
-                <!--end::panelLogo-->
+                <div class="app-header-logo d-flex align-items-center flex-stack px-lg-11 mb-2" id="kt_app_header_logo">
+                    <!--begin::Sidebar mobile toggle-->
+                    <div class="btn btn-icon btn-active-color-primary w-35px h-35px ms-3 me-2 d-flex d-lg-none"
+                         id="kt_app_sidebar_mobile_toggle">
+                        <i class="ki-duotone ki-abstract-14 fs-2">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                    </div>
+                    <!--end::Sidebar mobile toggle-->
+                    <!--begin::Logo-->
+                    <a href="../dist/index.html" class="app-sidebar-logo">
+                        <img alt="Logo" src="<?= views_theme(VIEWS_PANEL_THEME); ?>/assets/media/logos/default.svg" class="h-30px theme-light-show"/>
+                        <img alt="Logo" src="<?= views_theme(VIEWS_PANEL_THEME); ?>/assets/media/logos/default-dark.svg" class="h-30px theme-dark-show"/>
+                    </a>
+                    <!--end::Logo-->
+                    <!--begin::Sidebar toggle-->
+                    <div id="kt_app_sidebar_toggle"
+                         class="app-sidebar-toggle btn btn-sm btn-icon btn-color-warning me-n2 d-none d-lg-flex"
+                         data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"
+                         data-kt-toggle-name="app-sidebar-minimize">
+                        <i class="ki-duotone ki-exit-left fs-2x rotate-180">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                    </div>
+                    <!--end::Sidebar toggle-->
+                </div>
 
-                <!--begin::Navbar-->
-               <?php include ('includes/nav-bar.php'); ?>
-                <!--end::Navbar-->
+                <navbar
+                        image_path="<?= views_theme(VIEWS_PANEL_THEME); ?>/assets/media/avatars/300-2.jpg"
+                        :user="user"
+                />
             </div>
             <!--end::Header main-->
             <!--begin::Separator-->
@@ -45,7 +71,12 @@
                      data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_header"
                      data-kt-scroll-wrappers="#kt_app_main" data-kt-scroll-offset="5px">
 
-                    <?php include 'includes/sidebar-menu.php'; ?>
+                    <!--begin::Sidebar menu-->
+                    <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false"
+                         class="flex-column-fluid menu menu-sub-indention menu-column menu-rounded menu-active-bg mb-7">
+                        <sidebarmenu />
+                    </div>
+                    <!--end::Sidebar menu-->
 
                 </div>
                 <!--end::Main-->
@@ -63,14 +94,11 @@
                              class="app-container container-fluid d-flex align-items-stretch">
                             <!--begin::Toolbar wrapper-->
                             <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
-                                <!--begin::Page title-->
-                                <?php // include ('includes/page-title.php'); ?>
 
+                                <!--begin::Page title-->
                                 <div class="page-title d-flex flex-column gap-1 me-3 mb-2 js-breadcrumb" id="vue-breadcrumb">
                                     <Breadcrumb :pagetitle="pagetitle" :links="links" />
                                 </div>
-
-
                                 <!--end::Page title-->
                                 <?php if (false): ?>
                                     <!--begin::Actions-->
@@ -99,7 +127,7 @@
                                         <div class="card-header pt-5">
                                             <!--begin::Title-->
                                             <h3 class="card-title align-items-start flex-column">
-                                                <span class="card-label fw-bold text-dark">Performance Overview <span id="nametest"><nametest></nametest></span></span>
+                                                <span class="card-label fw-bold text-dark">Performance Overview </span>
                                                 <span class="text-gray-400 mt-1 fw-semibold fs-6">Users from all channels</span>
                                             </h3>
                                             <!--end::Title-->
