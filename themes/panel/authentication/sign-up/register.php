@@ -42,8 +42,9 @@
                 <!--begin::Wrapper-->
                 <div class="w-lg-600px p-10 p-lg-15 mx-auto">
                     <!--begin::Form-->
-                    <form class="form w-100" novalidate="novalidate"
+                    <form class="form w-100" novalidate="novalidate" action=""
                           data-kt-redirect-url="../dist/authentication/sign-in/basic.html" id="kt_sign_up_form">
+                        <?= csrf_input(); ?>
                         <!--begin::Heading-->
                         <div class="mb-10 text-center">
                             <!--begin::Title-->
