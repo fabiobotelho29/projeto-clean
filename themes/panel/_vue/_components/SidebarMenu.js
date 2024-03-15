@@ -15,6 +15,13 @@ const SidebarMenu = Vue.component('sidebarmenu', {
         SidebarTitle: SidebarTitle
     },
 
+    methods: {
+        say: function (msg, event) {
+            // now we have access to the native event
+            event.preventDefault()
+        }
+    },
+
     // renderização
     template: `   
    <div>

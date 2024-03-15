@@ -83,7 +83,7 @@ $(document).ready(function () {
                     window.location.href = response.redirect;
                 }
 
-                console.clear();
+                //console.clear();
 
             }
         });
@@ -244,14 +244,9 @@ $(document).ready(function () {
         return false;
     });
 
+    /*
     $("form:not('.upload')").on("submit", function (e) {
-        /**
-         * Formas de retorno:
-         * redirect => Redirecionando para página de sucesso
-         * assincronus => Carregando em parte do documento
-         * success => Sweetalert de sucesso e reset no form
-         * error => Sweet alert
-         */
+
         e.preventDefault();
 
         var url = $(this).attr("action");
@@ -261,8 +256,8 @@ $(document).ready(function () {
         var form = $(this).attr("id");
 
         ajax_function(url, dataset)
-
     });
+*/
 
 
     /***********************

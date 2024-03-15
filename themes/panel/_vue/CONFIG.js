@@ -21,6 +21,20 @@ export const VIEWS_THEME = (theme) => {
     return `${URL}/themes/${theme}`
 }
 
+export const API_URL = () => {
+
+    return SYSTEM_URL()+'/api';
+}
+
+export const PASSWORD_LIMIT = (limit = 'min') => {
+
+    if (limit === 'min') {
+        return `8`
+    } else {
+        return `40`
+    }
+}
+
 
 
 

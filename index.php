@@ -37,7 +37,8 @@ $router->get('/admin', 'Admin::login');
 
 /** API */
 $router->group("api");
-$router->post('/api/registerUser', 'ApiController::registerUser');
+$router->post('/registerUser', 'ApiController::registerUser');
+$router->get('/test', 'ApiController::test');
 
 /** DESPACHANDO ROTAS */
 $router->dispatch();

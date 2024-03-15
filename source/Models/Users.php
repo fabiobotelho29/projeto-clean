@@ -28,6 +28,9 @@ class Users extends Model
     /** @var */
     protected $message;
 
+    /** @var string $response => Utilizada para enviar mensagens de volta para o JS */
+    public $response;
+
     /**
      * Users constructor.
      */
@@ -43,11 +46,12 @@ class Users extends Model
      * @return Users
      */
     public function bootstrap(
-        string $name, string $email, string $password
+        string $first_name, string $last_name, $email, string $password
 
     ): Users
     {
-        $this->name = $name;
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
         $this->email = $email;
         $this->password = $password;
 
@@ -101,37 +105,51 @@ class Users extends Model
      */
     public function validate_register(): bool
     {
-        if (empty($this->name)) {
-            $this->message()->error("Preencha o campo Nome");
+        if (empty($this->first_name)) {
+            $this->response = "Preencha o campo Primeiro Nome";
+            return false;
+        }
+
+        if (strlen($this->first_name) >= 40) {
+            $this->response = "O campo Primeiro Nome deve conter até 40 caracteres";
+            return false;
+        }
+
+        if (empty($this->last_name)) {
+            $this->response = "Preencha o campo Sobrenome";
             return false;
         }
 
         if (empty($this->email)) {
-            $this->message()->error("Preencha o campo Email");
+            $this->response = "Preencha o campo E-mail";
             return false;
         }
 
         if (!is_email($this->email)){
-
-            $this->message()->error("Utilize um e-mail válido");
+            $this->response = "Preencha um E-mail válido";
             return false;
         }
 
         if (empty($this->password)) {
-            $this->message()->error("Preencha o campo Senha");
+            $this->response = "Preencha o campo Senha";
             return false;
         }
 
         if (!is_passwd($this->password)){
 
-            $this->message()->error("A senha precisa ter entre " .CONF_PASSWD_MIN_LEN. " e " .CONF_PASSWD_MAX_LEN. " caracteres");
+            $this->response = "A senha precisa ter entre " .CONF_PASSWD_MIN_LEN. " e " .CONF_PASSWD_MAX_LEN. " caracteres";
+            return false;
+        }
+
+        if (empty($this->terms)) {
+            $this->response = "Você precisa aceitar os termos e condições de uso";
             return false;
         }
 
         $repeated = $this->find("email = :e ", "e={$this->email}")->fetch();
 
         if ($repeated) {
-            $this->message()->error("Já existe outro cliente cadastrado com este email.");
+            $this->response = "Já existe um usuário cadastrado com o email {$this->email}";
             return false;
         }
 
@@ -159,8 +177,7 @@ class Users extends Model
         $repeated = $this->find("email = :e AND id <> :i", "e={$this->email}&i={$this->id}")->fetch();
 
         if ($repeated) {
-            $this->message()->error("Já existe outro cliente cadastrado com este email.");
-            return false;
+            $this->response = "Já existe um usuário cadastrado com o email {$this->email}";
         }
 
         return true;
@@ -215,18 +232,20 @@ class Users extends Model
 
             $this->json_data = json_encode($this->data);
 
+            $this->email = strtolower($this->email);
+
             /** criptografando a senha */
             $this->password = passwd($this->password);
 
             /* cadastra */
             $newRegister = $this->create($this->safe());
             if ($this->fail()) {
-                $this->message()->error($this->fail());
+                $this->response = $this->fail();
                 return null;
             }
 
             $this->data = $this->findById($newRegister);
-            $this->message()->success('Cadastro efetuado com sucesso');
+            $this->response = 'Cadastro efetuado com sucesso! Efetue Login';
             return $this->data;
 
         } else {
