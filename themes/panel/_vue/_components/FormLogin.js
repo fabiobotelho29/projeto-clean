@@ -1,4 +1,4 @@
-import {SYSTEM_URL, API_URL} from './../CONFIG.js'
+import {SYSTEM_URL, API_URL, AUTH_URL} from './../CONFIG.js'
 import LoadingButton from "./LoadingButton.js";
 
 const FormRegister = Vue.component('formlogin', {
@@ -114,7 +114,7 @@ const FormRegister = Vue.component('formlogin', {
                             <!--end::Title-->
                             <!--begin::Link-->
                             <div class="text-gray-400 fw-semibold fs-4">Novo por aqui?
-                                <a href="${SYSTEM_URL()}/auth/register" class="link-primary fw-bold">Crie sua Conta</a></div>
+                                <a href="${AUTH_URL()}/register" class="link-primary fw-bold">Crie sua Conta</a></div>
                             <!--end::Link-->
                         </div>
                         <!--begin::Heading-->
@@ -137,7 +137,7 @@ const FormRegister = Vue.component('formlogin', {
                                 <label class="form-label fw-bold text-dark fs-6 mb-0">Senha</label>
                                 <!--end::Label-->
                                 <!--begin::Link-->
-                                <a href="../dist/authentication/sign-in/password-reset.html"
+                                <a href="${AUTH_URL()}/password-reset"
                                    class="link-primary fs-6 fw-bold">Esqueceu a senha ?</a>
                                 <!--end::Link-->
                             </div>

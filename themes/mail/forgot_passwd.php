@@ -1,10 +1,10 @@
 <?php
-$v->layout(MAIL_THEME_FILE, ["title" => "Recupere sua senha para acessar o " . SEO_SITE_NAME]);
+$v->layout(VIEWS_MAIL_FILE, ["title" => "Recupere sua senha para acessar o " . SEO_SITE_NAME]);
 ?>
 
 
 <h3>RECUPERAÇÃO DE SENHA</h3>
-<p>Olá, <?= $user->login; ?>.</p>
+<p>Olá, <?= $user->email; ?>.</p>
 <p>Você está recebendo este e-mail pois uma recuperação de senha foi solicitada a partir deste e-mail
     na <?= SEO_SITE_NAME; ?>.</p>
 <p><b>IMPORTANTE:</b> Caso não tenha sido você quem solicitou, apenas ignore este e-mail. Seus dados permanecem
@@ -18,10 +18,10 @@ $v->layout(MAIL_THEME_FILE, ["title" => "Recupere sua senha para acessar o " . S
                                 text-align: center;
                                 border-radius: 3px;'
       title="Recuperar Senha"
-      href="<?= url("/reset/{$email}/{$forget_link}"); ?>">
+      href="<?= url(); ?>">
         CLIQUE AQUI PARA CRIAR UMA NOVA SENHA
     </a>
 </p>
-<p>Código de validação: <b><?= $forget_code; ?></b></p>
+<p>Código de validação: <b>123</b></p>
 
 

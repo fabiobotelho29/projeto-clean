@@ -105,6 +105,11 @@ define("VIEWS_PANEL_EXT", "php");
 define("VIEWS_THEME_PANEL_FILE", "_theme.php");
 define("VIEWS_THEME_PANEL_DASH_FILE", "_dashboard.php");
 
+define("VIEWS_MAIL_PATH", __DIR__."/../../themes/mail");
+define("VIEWS_MAIL_THEME", "mail");
+define("VIEWS_MAIL_EXT", "php");
+define("VIEWS_MAIL_FILE", "_theme.php");
+
 /**
  * ##############
  * ### UPLOAD ###

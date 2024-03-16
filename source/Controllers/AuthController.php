@@ -44,7 +44,7 @@ class AuthController extends Controller
     {
 
         $seo = $this->seo
-            ->title(SEO_SITE_NAME . " | Cadastro de Usuário")
+            ->title(": : Cadastro de Usuário")
             ->favicon()->render();
 
         echo $this->view->render(
@@ -60,11 +60,26 @@ class AuthController extends Controller
     {
 
         $seo = $this->seo
-            ->title(SEO_SITE_NAME . " | Login")
+            ->title(": : Login")
             ->favicon()->render();
 
         echo $this->view->render(
             "authentication/sign-in/login",
+            [
+                "seo" => $seo,
+            ]
+        );
+    }
+
+    public function password_reset(?array $data): void
+    {
+
+        $seo = $this->seo
+            ->title(": : Esqueceu a senha")
+            ->favicon()->render();
+
+        echo $this->view->render(
+            "authentication/sign-in/password-reset",
             [
                 "seo" => $seo,
             ]

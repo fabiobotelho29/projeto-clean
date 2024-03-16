@@ -9,6 +9,7 @@ use http\Env\Request;
 use Mpdf\Tag\U;
 use Source\Core\Controller;
 use Source\Core\Session;
+use Source\Core\View;
 use Source\Models\Users;
 use Source\Models\UsersData;
 
@@ -20,6 +21,10 @@ use Source\Models\UsersData;
 class ApiController extends Controller
 {
     protected $METHOD;
+
+    /** @var mixed|null User */
+    public $USER;
+
     /**
      * ApiController constructor.
      */
@@ -27,6 +32,11 @@ class ApiController extends Controller
     {
         $pathToViews = "";
         parent::__construct($pathToViews);
+
+        if (\session()->has("user")){
+
+            $this->USER = \session()->user;
+        }
     }
 
     /**
@@ -83,9 +93,6 @@ class ApiController extends Controller
             echo json_encode($json);
             return;
         }
-
-
-
     }
 
     public function loginUser($data): void
@@ -133,9 +140,79 @@ class ApiController extends Controller
             echo json_encode($json);
             return;
         }
+    }
+
+    public function passwordReset($data): void
+    {
+        $this->METHOD = $_SERVER['REQUEST_METHOD'];
+
+        if ($this->METHOD === 'POST'){
+            // dados do form
+            $data = json_decode(file_get_contents('php://input'), true);
+
+            // form validation
+            $email = htmlspecialchars($data['email']);
+
+            // user
+            $user = (new Users())->findByEmail($email);
+
+            // checking user
+            if (!$user){
+
+                $json['error'] = 'Usuário não encontrado. Verifique o email digitado.';
+                echo json_encode($json);
+                return;
+            }
+
+            // enviando e-mail de confirmação
+            // mail views
+            $pathMailViews = VIEWS_MAIL_PATH;
+            $mail_view = new View($pathMailViews);
+            $mail_view->render("forgot_passwd", [
+                "user" => $this->USER
+            ]);
+
+            // emails para quem será enviado o formulário
+            $emailenviar =$this->USER->email;
+            $destino = $emailenviar;
+            $assunto = "Esqueceu a senha";
+            $nome = "Fabio Da Brenda";
+            $email = 'fabiodabrenda@gmail.com';
+            $message = $mail_view;
+
+            // É necessário indicar que o formato do e-mail é html
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+            $headers .= 'From: Fabio Da Brenda <$email>';
+            //$headers .= "Bcc: $EmailPadrao\r\n";
+
+            //$message = 'Mensagem enviada pelo email';
+
+            $enviaremail = mail($destino, $assunto, $message, $headers);
+            if ($enviaremail) {
+                $mgm = "E-MAIL ENVIADO COM SUCESSO! <br> O link será enviado para o e-mail fornecido no formulário";
+                echo 'funciona';
+            } else {
+                $mgm = "ERRO AO ENVIAR E-MAIL!";
+                $enviaremail2 = mail("fabiodabrenda@gmail.com", 'Venda de Livro', "Não Confirmada: {$Customer_full_name} {$Customer_email}", $headers);
+                echo "";
+            }
 
 
+            dump($mail_view);
 
+
+            $json['success'] = "Usuário encontrado. Aguarde redirecionamento.";
+            $json['url'] = url('panel/dashboard');
+            echo json_encode($json);
+            return;
+
+        } else {
+
+            $json['erro'] = 'Tipo de Requisição inválida';
+            echo json_encode($json);
+            return;
+        }
     }
 
     public function test(?array $data)

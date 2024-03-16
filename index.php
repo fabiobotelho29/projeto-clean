@@ -21,6 +21,7 @@ $router->group("auth");
 $router->get('/register', 'AuthController::register', 'AuthControllerRegister');
 $router->get('/login', 'AuthController::login', 'AuthControllerLogin');
 $router->get('/logout', 'AuthController::logout', 'AuthControllerLogout');
+$router->get('/password-reset', 'AuthController::password_reset', 'AuthControllerPasswordReset');
 
 /** PANEL */
 $router->group("panel");
@@ -40,6 +41,7 @@ $router->get('/admin', 'Admin::login');
 $router->group("api");
 $router->post('/registerUser', 'ApiController::registerUser');
 $router->post('/loginUser', 'ApiController::loginUser');
+$router->post('/passwordReset', 'ApiController::passwordReset');
 $router->get('/test', 'ApiController::test');
 
 /** DESPACHANDO ROTAS */
