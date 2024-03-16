@@ -87,6 +87,12 @@ function password_generate(): string
     return $codigo;
 }
 
+function recover_generate(): string
+{
+    $codigo = substr(md5(uniqid(rand(), true)), rand(1, 10), 6);
+    return $codigo;
+}
+
 function webhook_register($product, $event, $email, $payload){
 
 // saving data into webhook

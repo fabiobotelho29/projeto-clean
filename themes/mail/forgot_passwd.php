@@ -18,10 +18,10 @@ $v->layout(VIEWS_MAIL_FILE, ["title" => "Recupere sua senha para acessar o " . S
                                 text-align: center;
                                 border-radius: 3px;'
       title="Recuperar Senha"
-      href="<?= url(); ?>">
+      href="<?= url("/auth/new-password/" . cript_code($user->code)); ?>">
         CLIQUE AQUI PARA CRIAR UMA NOVA SENHA
     </a>
 </p>
-<p>Código de validação: <b>123</b></p>
+<p>Código de validação: <b><?= $user->code_recover_password; ?></b></p>
 
 

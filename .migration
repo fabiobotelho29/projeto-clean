@@ -1,0 +1,20 @@
+CREATE TABLE `users` (
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
+	`first_name` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`last_name` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`email` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`password` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`code` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`code_recover_password` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8mb4_unicode_ci',
+	`json_data` LONGTEXT NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`terms` INT(10) NOT NULL DEFAULT '0',
+	`created_at` DATETIME NOT NULL DEFAULT (now()),
+	`updated_at` DATETIME NOT NULL DEFAULT (now()),
+	PRIMARY KEY (`id`) USING BTREE,
+	UNIQUE INDEX `email` (`email`) USING BTREE
+)
+COMMENT='Tabela de Usuários Administradores e Funcionários'
+COLLATE='utf8mb4_unicode_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=7
+;

@@ -33,7 +33,7 @@ class ApiController extends Controller
         $pathToViews = "";
         parent::__construct($pathToViews);
 
-        if (\session()->has("user")){
+        if (\session()->has("user")) {
 
             $this->USER = \session()->user;
         }
@@ -49,7 +49,7 @@ class ApiController extends Controller
     {
         $this->METHOD = $_SERVER['REQUEST_METHOD'];
 
-        if ($this->METHOD === 'POST'){
+        if ($this->METHOD === 'POST') {
             // dados do form
             $data = json_decode(file_get_contents('php://input'), true);
 
@@ -70,7 +70,7 @@ class ApiController extends Controller
             $user->terms = $terms;
 
             // validating user
-            if (!$user->validate_register()){
+            if (!$user->validate_register()) {
 
                 $json['error'] = $user->response;
                 echo json_encode($json);
@@ -78,7 +78,7 @@ class ApiController extends Controller
             }
 
             // saving user
-            if (!$user->save()){
+            if (!$user->save()) {
                 $json['error'] = $user->response;
                 echo json_encode($json);
                 return;
@@ -99,7 +99,7 @@ class ApiController extends Controller
     {
         $this->METHOD = $_SERVER['REQUEST_METHOD'];
 
-        if ($this->METHOD === 'POST'){
+        if ($this->METHOD === 'POST') {
             // dados do form
             $data = json_decode(file_get_contents('php://input'), true);
 
@@ -111,7 +111,7 @@ class ApiController extends Controller
             $user = (new Users())->findByEmail($email);
 
             // checking user
-            if (!$user){
+            if (!$user) {
 
                 $json['error'] = 'Usuário não encontrado. Verifique o email digitado.';
                 echo json_encode($json);
@@ -119,7 +119,7 @@ class ApiController extends Controller
             }
 
             // validating password
-            if (!passwd_verify($password, $user->password)){
+            if (!passwd_verify($password, $user->password)) {
 
                 $json['error'] = 'A Senha digitada está incorreta.';
                 echo json_encode($json);
@@ -146,7 +146,7 @@ class ApiController extends Controller
     {
         $this->METHOD = $_SERVER['REQUEST_METHOD'];
 
-        if ($this->METHOD === 'POST'){
+        if ($this->METHOD === 'POST') {
             // dados do form
             $data = json_decode(file_get_contents('php://input'), true);
 
@@ -155,9 +155,12 @@ class ApiController extends Controller
 
             // user
             $user = (new Users())->findByEmail($email);
+            $user->code_recover_password = recover_generate();
+
+            $user->save();
 
             // checking user
-            if (!$user){
+            if (!$user) {
 
                 $json['error'] = 'Usuário não encontrado. Verifique o email digitado.';
                 echo json_encode($json);
@@ -169,7 +172,7 @@ class ApiController extends Controller
             $pathMailViews = VIEWS_MAIL_PATH;
             $mail_view = new View($pathMailViews);
             $message = $mail_view->render("forgot_passwd", [
-                "user" => $user
+                "user" => $user,
             ]);
 
             // emails para quem será enviado o formulário
@@ -182,12 +185,13 @@ class ApiController extends Controller
             // É necessário indicar que o formato do e-mail é html
             $headers = 'MIME-Version: 1.0' . "\r\n";
             $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-            $headers .= 'From: Fabio Da Brenda <$email>';
+            $headers .= 'From: fabio@gmail.com';
             //$headers .= "Bcc: $EmailPadrao\r\n";
 
             //$message = 'Mensagem enviada pelo email';
-
             $enviaremail = mail($destino, $assunto, $message, $headers);
+            echo $message;
+            dump(123);
 
             if ($enviaremail) {
                 $mgm = "E-MAIL ENVIADO COM SUCESSO! <br> O link será enviado para o e-mail fornecido no formulário";
@@ -198,12 +202,62 @@ class ApiController extends Controller
                 echo "";
             }
 
-
-            dump($mail_view);
-
-
             $json['success'] = "Usuário encontrado. Aguarde redirecionamento.";
-            $json['url'] = url('panel/dashboard');
+            echo json_encode($json);
+            return;
+
+        } else {
+
+            $json['erro'] = 'Tipo de Requisição inválida';
+            echo json_encode($json);
+            return;
+        }
+    }
+
+    public function newPassword($data): void
+    {
+        $this->METHOD = $_SERVER['REQUEST_METHOD'];
+
+        if ($this->METHOD === 'POST') {
+            // dados do form
+            $data = json_decode(file_get_contents('php://input'), true);
+
+            // form validation
+            $password = htmlspecialchars($data['password']);
+            $confirmPassword = htmlspecialchars($data['confirmPassword']);
+            $code = htmlspecialchars($data['code']);
+
+            // checking passwords
+            if ($password !== $confirmPassword){
+
+                $json['error'] = 'As senhas devem ser iguais.';
+                echo json_encode($json);
+                return;
+            }
+
+            $decript_code = decript_code($code);
+
+            // user
+            $user = (new Users())->findByCode($decript_code);
+            if (!$user) {
+
+                $json['error'] = 'Usuário não encontrado. Verifique o link enviado por email.';
+                echo json_encode($json);
+                return;
+            }
+
+            $user->password = passwd($password);
+
+            // saving user
+            if (!$user->save()) {
+
+                $json['error'] = 'Erro ao savar a nova senha. Entre em contato com o suporte.';
+                echo json_encode($json);
+                return;
+            }
+
+            // success message
+            $json['success'] = "Senha alterada com sucesso. Efetue Login.";
             echo json_encode($json);
             return;
 

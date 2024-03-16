@@ -86,6 +86,22 @@ class AuthController extends Controller
         );
     }
 
+
+    public function new_password(?array $data): void
+    {
+        $seo = $this->seo
+            ->title(": : Nova Senha")
+            ->favicon()->render();
+
+        echo $this->view->render(
+            "authentication/sign-in/new-password",
+            [
+                "seo" => $seo,
+                "user_code" => $data['user_code'],
+            ]
+        );
+    }
+
     public function logout(?array $data): void
     {
 

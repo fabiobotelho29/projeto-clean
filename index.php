@@ -13,8 +13,18 @@ $router = new Router("", "::");
 /** NAMESPACE */
 $router->namespace("Source\Controllers");
 
+
+
 /** FRONT */
 $router->get('/', 'FrontController::home');
+
+/** API */
+$router->group("api");
+$router->post('/registerUser', 'ApiController::registerUser');
+$router->post('/loginUser', 'ApiController::loginUser');
+$router->post('/passwordReset', 'ApiController::passwordReset');
+$router->post('/newPassword', 'ApiController::newPassword');
+$router->get('/test', 'ApiController::test');
 
 /** AUTHENTICATION */
 $router->group("auth");
@@ -22,6 +32,7 @@ $router->get('/register', 'AuthController::register', 'AuthControllerRegister');
 $router->get('/login', 'AuthController::login', 'AuthControllerLogin');
 $router->get('/logout', 'AuthController::logout', 'AuthControllerLogout');
 $router->get('/password-reset', 'AuthController::password_reset', 'AuthControllerPasswordReset');
+$router->get('/new-password/{user_code}', 'AuthController::new_password', 'AuthControllerNewPassword');
 
 /** PANEL */
 $router->group("panel");
@@ -37,12 +48,7 @@ $router->get('/account/employees/employee-data/{employee_code}', 'PanelControlle
 $router->group("admin");
 $router->get('/admin', 'Admin::login');
 
-/** API */
-$router->group("api");
-$router->post('/registerUser', 'ApiController::registerUser');
-$router->post('/loginUser', 'ApiController::loginUser');
-$router->post('/passwordReset', 'ApiController::passwordReset');
-$router->get('/test', 'ApiController::test');
+
 
 /** DESPACHANDO ROTAS */
 $router->dispatch();
