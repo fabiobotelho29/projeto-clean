@@ -26,6 +26,11 @@ export const API_URL = () => {
     return SYSTEM_URL()+'/api';
 }
 
+export const PANEL_URL = () => {
+
+    return SYSTEM_URL()+'/panel';
+}
+
 export const PASSWORD_LIMIT = (limit = 'min') => {
 
     if (limit === 'min') {

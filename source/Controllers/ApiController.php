@@ -8,6 +8,7 @@ namespace Source\Controllers;
 use http\Env\Request;
 use Mpdf\Tag\U;
 use Source\Core\Controller;
+use Source\Core\Session;
 use Source\Models\Users;
 use Source\Models\UsersData;
 
@@ -73,6 +74,56 @@ class ApiController extends Controller
                 return;
             }
             $json['success'] = $user->response;
+            echo json_encode($json);
+            return;
+
+        } else {
+
+            $json['erro'] = 'Tipo de Requisição inválida';
+            echo json_encode($json);
+            return;
+        }
+
+
+
+    }
+
+    public function loginUser($data): void
+    {
+        $this->METHOD = $_SERVER['REQUEST_METHOD'];
+
+        if ($this->METHOD === 'POST'){
+            // dados do form
+            $data = json_decode(file_get_contents('php://input'), true);
+
+            // form validation
+            $email = htmlspecialchars($data['email']);
+            $password = htmlspecialchars($data['password']);
+
+            // use
+            $user = (new Users())->findByEmail($email);
+
+            // checking user
+            if (!$user){
+
+                $json['error'] = 'Usuário não encontrado. Verifique o email digitado.';
+                echo json_encode($json);
+                return;
+            }
+
+            // validating password
+            if (!passwd_verify($password, $user->password)){
+
+                $json['error'] = 'A Senha digitada está incorreta.';
+                echo json_encode($json);
+                return;
+            }
+
+            // loging in user
+            \session()->set("user", $user);
+
+            $json['success'] = "Usuário encontrado. Aguarde redirecionamento.";
+            $json['url'] = url('panel/dashboard');
             echo json_encode($json);
             return;
 

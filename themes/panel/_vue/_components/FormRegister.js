@@ -1,4 +1,5 @@
 import {SYSTEM_URL, VIEWS_THEME, SITE_NAME, PASSWORD_LIMIT, API_URL} from './../CONFIG.js'
+import LoadingButton from './LoadingButton.js'
 
 const FormRegister = Vue.component('formregister', {
 
@@ -95,7 +96,9 @@ const FormRegister = Vue.component('formregister', {
     },
 
     // componentes
-    components: {},
+    components: {
+        LoadingButton: LoadingButton
+    },
 
     // renderização
     template: `   
@@ -159,7 +162,7 @@ const FormRegister = Vue.component('formregister', {
                                 <!--end::Label-->
                                 <!--begin::Input wrapper-->
                                 <div class="position-relative mb-3">
-                                    <input ref="password" v-model="userData.password"class="form-control form-control-lg form-control-solid" type="password"
+                                    <input ref="password" v-model="userData.password" class="form-control form-control-lg form-control-solid" type="password"
                                            placeholder="********"  autocomplete="off"/>
                                     <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2"
                                           data-kt-password-meter-control="visibility">
@@ -205,9 +208,7 @@ const FormRegister = Vue.component('formregister', {
                         <div class="text-center">
                             <button type="submit" id="kt_sign_up_submit" class="btn btn-lg btn-primary">
                                 <span class="indicator-label"><i class="fa fa-user"></i> Cadastrar</span>
-                                <span class="indicator-progress" :style="display">Por favor, espere...
-										<span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-								</span>
+								<LoadingButton :display="display" />
                             </button>
                         </div>
                         <!--end::Actions-->

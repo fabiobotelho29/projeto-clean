@@ -12,7 +12,7 @@
                 <!--begin::Header-->
                 <div class="d-flex flex-row-fluid flex-column text-center p-5 p-lg-10 pt-lg-20">
                     <!--begin::Logo-->
-                    <a href="../dist/index.html" class="py-2 py-lg-20">
+                    <a href="<?= url("/auth/register"); ?>" class="py-2 py-lg-20">
                         <img alt="Logo" src="<?= views_theme(VIEWS_PANEL_THEME); ?>/assets/media/logos/mail.svg"
                              class="h-40px h-lg-50px"/>
                     </a>
