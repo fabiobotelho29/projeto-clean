@@ -168,17 +168,16 @@ class ApiController extends Controller
             // mail views
             $pathMailViews = VIEWS_MAIL_PATH;
             $mail_view = new View($pathMailViews);
-            $mail_view->render("forgot_passwd", [
-                "user" => $this->USER
+            $message = $mail_view->render("forgot_passwd", [
+                "user" => $user
             ]);
 
             // emails para quem será enviado o formulário
-            $emailenviar =$this->USER->email;
+            $emailenviar = $user->email;
             $destino = $emailenviar;
             $assunto = "Esqueceu a senha";
             $nome = "Fabio Da Brenda";
             $email = 'fabiodabrenda@gmail.com';
-            $message = $mail_view;
 
             // É necessário indicar que o formato do e-mail é html
             $headers = 'MIME-Version: 1.0' . "\r\n";
@@ -189,6 +188,7 @@ class ApiController extends Controller
             //$message = 'Mensagem enviada pelo email';
 
             $enviaremail = mail($destino, $assunto, $message, $headers);
+
             if ($enviaremail) {
                 $mgm = "E-MAIL ENVIADO COM SUCESSO! <br> O link será enviado para o e-mail fornecido no formulário";
                 echo 'funciona';

@@ -4,7 +4,7 @@ $v->layout(VIEWS_MAIL_FILE, ["title" => "Recupere sua senha para acessar o " . S
 
 
 <h3>RECUPERAÇÃO DE SENHA</h3>
-<p>Olá, <?= $user->email; ?>.</p>
+<p>Olá, <?= $user->first_name; ?>.</p>
 <p>Você está recebendo este e-mail pois uma recuperação de senha foi solicitada a partir deste e-mail
     na <?= SEO_SITE_NAME; ?>.</p>
 <p><b>IMPORTANTE:</b> Caso não tenha sido você quem solicitou, apenas ignore este e-mail. Seus dados permanecem
