@@ -1,4 +1,4 @@
-import {SYSTEM_URL, API_URL, PASSWORD_LIMIT} from './../CONFIG.js'
+import {SYSTEM_URL, API_URL, PASSWORD_LIMIT, AUTH_URL} from './../CONFIG.js'
 import LoadingButton from "./LoadingButton.js";
 
 const FormNewPassword = Vue.component('formnewpassword', {
@@ -113,7 +113,7 @@ const FormNewPassword = Vue.component('formnewpassword', {
 									<!--end::Title-->
 									<!--begin::Link-->
 									<div class="text-gray-400 fw-semibold fs-4">Já recuperou sua senha ?
-									<a href="../dist/authentication/sign-in/basic.html" class="link-primary fw-bold">Efetue Login</a></div>
+									<a href="${AUTH_URL()}/login" class="link-primary fw-bold">Efetue Login</a></div>
 									<!--end::Link-->
 								</div>
 								<!--begin::Heading-->
