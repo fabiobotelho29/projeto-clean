@@ -20,6 +20,7 @@ $router->get('/', 'FrontController::home');
 $router->group("auth");
 $router->get('/register', 'AuthController::register', 'AuthControllerRegister');
 $router->get('/login', 'AuthController::login', 'AuthControllerLogin');
+$router->get('/logout', 'AuthController::logout', 'AuthControllerLogout');
 
 /** PANEL */
 $router->group("panel");

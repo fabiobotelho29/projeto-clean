@@ -1,4 +1,4 @@
-import {SYSTEM_URL, SITE_NAME, VIEWS_THEME} from '../CONFIG.js'
+import {SYSTEM_URL, SITE_NAME, VIEWS_THEME, AUTH_URL} from '../CONFIG.js'
 
 const NavBar = Vue.component('navbar', {
 
@@ -150,7 +150,7 @@ const NavBar = Vue.component('navbar', {
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
-                                <a href="../dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sair</a>
+                                <a href="${AUTH_URL()}/logout" class="menu-link px-5">Sair</a>
                             </div>
                             <!--end::Menu item-->
                         </div>

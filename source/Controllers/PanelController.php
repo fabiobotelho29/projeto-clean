@@ -7,6 +7,7 @@ namespace Source\Controllers;
 
 use Source\Core\Connect;
 use Source\Core\Controller;
+use Source\Models\Users;
 
 /**
  * Class Admin
@@ -17,10 +18,23 @@ class PanelController extends Controller
     /**
      * TestController constructor.
      */
+
+    /** @var Users */
+    public $USER;
+
     public function __construct()
     {
         $pathToViews = __DIR__ . "/../../themes/" . VIEWS_PANEL_THEME . "/";
         parent::__construct($pathToViews);
+
+        // checking login
+        if (!session()->has('user')){
+            session()->destroy();
+            redirect("auth/login");
+        }
+
+        // user
+        $this->USER = session()->user;
     }
 
     /**
@@ -37,7 +51,7 @@ class PanelController extends Controller
     public function dashboard(?array $data): void
     {
         $seo = $this->seo
-            ->title(SEO_SITE_NAME . " : : Dashboard")
+            ->title(": : Dashboard")
             ->favicon()->render();
 
         echo $this->view->render(
@@ -52,7 +66,7 @@ class PanelController extends Controller
     {
 
         $seo = $this->seo
-            ->title(SEO_SITE_NAME . " | Painel do Usuário")
+            ->title(": : Perfil do Usuário")
             ->favicon()->render();
 
         echo $this->view->render(

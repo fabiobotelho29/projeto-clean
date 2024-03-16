@@ -31,6 +31,11 @@ export const PANEL_URL = () => {
     return SYSTEM_URL()+'/panel';
 }
 
+export const AUTH_URL = () => {
+
+    return SYSTEM_URL()+'/auth';
+}
+
 export const PASSWORD_LIMIT = (limit = 'min') => {
 
     if (limit === 'min') {

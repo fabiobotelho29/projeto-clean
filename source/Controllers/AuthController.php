@@ -70,4 +70,15 @@ class AuthController extends Controller
             ]
         );
     }
+
+    public function logout(?array $data): void
+    {
+
+        if (session()->has("user")){
+            session()->destroy();
+            redirect("auth/login");
+        }
+
+        redirect("auth/login");
+    }
 }
